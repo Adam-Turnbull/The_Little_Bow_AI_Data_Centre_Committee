@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Little Bow AI Data Centre Committee  Facts on the Proposed AI Data Centre Near Travers Reservoir</title>
+    <meta name="description" content="Independent, factual information on the AI data centre proposed for irrigated farmland near Travers Reservoir and Little Bow, Vulcan County  from the residents who live here.">
+    <meta property="og:title" content="The Little Bow AI Data Centre Committee  Facts. Documents. Decisions. Accountability.">
+    <meta property="og:description" content="Independent, factual information on the AI data centre proposed for irrigated farmland near Travers Reservoir and Little Bow, Vulcan County.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --ink:#1F2933;
+            --dusk:#28394A;
+            --dusk-2:#1D2A38;
+            --parchment:#F6F1E6;
+            --parchment-2:#EFE7D6;
+            --copper:#C1602C;
+            --copper-dark:#9C4B22;
+            --gold:#D9A441;
+            --sage:#5C6B5D;
+            --line:#D9CDB2;
+            --line-dark:rgba(246,241,230,0.16);
+            --white:#FFFFFF;
+            --max:1600px;
+        }
+        *{box-sizing:border-box;}
+        html{scroll-behavior:smooth;}
+        body{
+            margin:0;
+            background:var(--parchment);
+            color:var(--ink);
+            font-family:'Public Sans', system-ui, sans-serif;
+            line-height:1.55;
+            -webkit-font-smoothing:antialiased;
+        }
+        h1,h2,h3,h4{
+            font-family:'Fraunces', Georgia, serif;
+            font-weight:600;
+            line-height:1.1;
+            margin:0 0 .5em;
+            color:var(--ink);
+        }
+        p{margin:0 0 1em;}
+        a{color:inherit;}
+        img{max-width:100%;display:block;}
+        .mono{
+            font-family:'IBM Plex Mono', monospace;
+            letter-spacing:.04em;
+            text-transform:uppercase;
+            font-size:.72rem;
+        }
+        .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+
+        /* survey-grid signature texture */
+        .grid-tex{
+            background-image:
+                    linear-gradient(rgba(31,41,51,0.055) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(31,41,51,0.055) 1px, transparent 1px);
+            background-size:34px 34px;
+        }
+        .grid-tex-dark{
+            background-image:
+                    linear-gradient(rgba(246,241,230,0.06) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(246,241,230,0.06) 1px, transparent 1px);
+            background-size:34px 34px;
+        }
+
+        /* ---------- header / nav ---------- */
+        header.site{
+            position:sticky; top:0; z-index:50;
+            background:var(--dusk);
+            color:var(--parchment);
+            border-bottom:1px solid var(--line-dark);
+        }
+        .nav-row{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:16px 28px;
+            max-width:var(--max);
+            margin:0 auto;
+        }
+        .brand{
+            display:flex; align-items:center; gap:12px;
+            text-decoration:none; color:var(--parchment);
+        }
+        .brand .peg{
+            width:34px;height:34px;border-radius:50%;
+            background:var(--copper);
+            display:flex;align-items:center;justify-content:center;
+            font-family:'Fraunces',serif; font-weight:700; color:var(--parchment);
+            flex-shrink:0;
+        }
+        .brand .name{
+            font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; line-height:1.15;
+        }
+        .brand .name small{
+            display:block; font-family:'IBM Plex Mono',monospace; font-size:.62rem;
+            letter-spacing:.08em; text-transform:uppercase; color:var(--gold); font-weight:500; margin-top:2px;
+        }
+        nav.tabs{display:flex; gap:2px; flex-wrap:wrap;flex:1;justify-content:flex-end;}
+        nav.tabs button{
+            background:none; border:none; cursor:pointer;
+            color:var(--parchment); opacity:.72;
+            font-family:'Public Sans',sans-serif; font-weight:600; font-size:.86rem;
+            padding:10px 13px; border-radius:3px;
+            position:relative;
+            transition:opacity .15s, background .15s;
+        }
+        nav.tabs button:hover{opacity:1; background:rgba(246,241,230,0.07);}
+        nav.tabs button.active{opacity:1; color:var(--white);}
+        nav.tabs button.active::after{
+            content:""; position:absolute; left:12px; right:12px; bottom:3px; height:2px;
+            background:var(--copper);
+        }
+        .burger{display:none; background:none;border:none;color:var(--parchment);font-size:1.5rem;cursor:pointer;}
+
+        @media (max-width:920px){
+            nav.tabs{
+                display:none; position:absolute; top:100%; left:0; right:0;
+                background:var(--dusk-2); flex-direction:column; padding:8px 12px 16px;
+                border-bottom:1px solid var(--line-dark);
+            }
+            nav.tabs.open{display:flex;}
+            nav.tabs button{text-align:left; width:100%; padding:12px 8px;}
+            .burger{display:block;}
+        }
+
+        /* ---------- buttons ---------- */
+        .btn{
+            display:inline-flex; align-items:center; gap:8px;
+            font-family:'Public Sans',sans-serif; font-weight:700; font-size:.92rem;
+            padding:13px 22px; border-radius:2px; text-decoration:none; cursor:pointer;
+            border:1px solid transparent; transition:transform .12s ease, background .15s;
+        }
+        .btn:hover{transform:translateY(-1px);}
+        .btn-copper{background:var(--copper); color:var(--white);}
+        .btn-copper:hover{background:var(--copper-dark);}
+        .btn-outline{border-color:var(--parchment); color:var(--parchment);}
+        .btn-outline:hover{background:rgba(246,241,230,0.1);}
+        .btn-ink-outline{border-color:var(--ink); color:var(--ink);}
+        .btn-ink-outline:hover{background:rgba(31,41,51,0.06);}
+        .btn-sage{background:var(--sage); color:var(--white);}
+
+        /* ---------- hero ---------- */
+        .hero{
+            position:relative; color:var(--white);
+            display:flex; align-items:flex-end;
+            min-height:78vh;
+            background:linear-gradient(180deg, rgba(29,42,56,.35) 0%, rgba(20,26,33,.55) 55%, rgba(15,19,24,.86) 100%), url('hero.jpg') center 62%/cover no-repeat;
+        }
+        .hero-inner{max-width:var(--max); margin:0 auto; padding:64px 28px 56px; width:100%;}
+        .eyebrow{
+            display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:.72rem;
+            letter-spacing:.1em; text-transform:uppercase; color:var(--gold);
+            border:1px solid rgba(217,164,65,.5); padding:5px 11px; border-radius:2px; margin-bottom:22px;
+        }
+        .hero h1{
+            font-size:clamp(2.2rem, 5.4vw, 3.9rem); color:var(--white); max-width:15ch; font-weight:600;
+        }
+        .hero .lede{
+            font-size:1.15rem; max-width:52ch; color:rgba(246,241,230,.92); margin:18px 0 30px;
+        }
+        .hero-cta{display:flex; gap:14px; flex-wrap:wrap;}
+
+        /* ---------- generic sections ---------- */
+        section{padding:76px 0;}
+        .section-parchment2{background:var(--parchment-2);}
+        .section-dusk{background:var(--dusk); color:var(--parchment);}
+        .section-dusk h2, .section-dusk h3{color:var(--white);}
+        .kicker{
+            font-family:'IBM Plex Mono',monospace; font-size:.74rem; letter-spacing:.1em;
+            text-transform:uppercase; color:var(--copper); margin-bottom:10px; display:block;
+        }
+        .section-dusk .kicker{color:var(--gold);}
+        h2.h-lg{font-size:clamp(1.7rem,3.4vw,2.5rem); max-width:22ch;}
+        .rule{height:1px; background:var(--line); border:none; margin:56px 0;}
+        .lead-p{font-size:1.08rem; max-width:62ch; color:#3c4650;}
+        .section-dusk .lead-p{color:rgba(246,241,230,.85);}
+
+        /* cards */
+        .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+        .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:28px;}
+        @media(max-width:860px){.grid-3,.grid-2{grid-template-columns:1fr;}}
+
+        .card{
+            background:var(--white); border:1px solid var(--line); padding:28px;
+            border-radius:2px;
+        }
+        .card h3{font-size:1.2rem;}
+        .card .mono{color:var(--sage); margin-bottom:12px; display:block;}
+
+        .news-card a.title-link{text-decoration:none; color:var(--ink);}
+        .news-card a.title-link:hover{color:var(--copper);}
+        .home-title-link{text-decoration:none; color:inherit;}
+        .home-title-link:hover{color:var(--gold);}
+
+        /* links inside post body text (from the sheet's rich text / hyperlinks) */
+        .news-card p a, .card p a{
+            color:#2563EB;
+            text-decoration:underline;
+        }
+        .news-card p a:hover, .card p a:hover{
+            color:#1D4ED8;
+        }
+        .section-dusk .card p a{
+            color:#7FA8FF;
+        }
+        .section-dusk .card p a:hover{
+            color:#A9C5FF;
+        }
+
+        /* facts panel */
+        .facts{background:var(--white); border:1px solid var(--line); padding:26px 28px;}
+        .facts dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:10px 18px;}
+        .facts dt{font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; color:var(--sage); align-self:start; padding-top:2px;}
+        .facts dd{margin:0; font-weight:600;}
+
+        /* timeline */
+        .timeline{border-left:2px solid var(--line); margin-left:6px; padding-left:28px;}
+        .timeline .tl-item{position:relative; padding-bottom:34px;}
+        .timeline .tl-item:last-child{padding-bottom:0;}
+        .timeline .tl-item::before{
+            content:""; position:absolute; left:-33.5px; top:4px; width:11px; height:11px;
+            border-radius:50%; background:var(--copper); border:2px solid var(--parchment);
+        }
+        .section-dusk .timeline{border-left-color:var(--line-dark);}
+        .section-dusk .timeline .tl-item::before{border-color:var(--dusk);}
+        .tl-date{font-family:'IBM Plex Mono',monospace; font-size:.75rem; color:var(--copper); text-transform:uppercase; letter-spacing:.06em; display:block; margin-bottom:4px;}
+        .section-dusk .tl-date{color:var(--gold);}
+
+        /* take action */
+        .action-list{display:flex; flex-direction:column; gap:0;}
+        .action-item{
+            display:grid; grid-template-columns:64px 1fr; gap:24px;
+            padding:34px 0; border-bottom:1px solid var(--line);
+        }
+        .action-item:first-child{padding-top:0;}
+        .action-num{
+            font-family:'Fraunces',serif; font-size:2.1rem; font-weight:600; color:var(--copper);
+            line-height:1;
+        }
+        .action-item h3{margin-bottom:8px;}
+        .action-item .action-desc{max-width:62ch; color:#3c4650; margin-bottom:16px;}
+        .action-actions{display:flex; gap:12px; flex-wrap:wrap;}
+
+        .letter-box{
+            background:var(--white); border:1px solid var(--line); border-left:4px solid var(--copper);
+            padding:22px 24px; font-family:'IBM Plex Mono',monospace; font-size:.85rem; line-height:1.7;
+            white-space:pre-wrap; color:#3c4650; margin-top:16px;
+        }
+
+        .share-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;}
+        .share-btn{
+            font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.05em; text-transform:uppercase;
+            padding:9px 14px; border:1px solid var(--ink); background:none; border-radius:2px; cursor:pointer;
+        }
+        .share-btn:hover{background:var(--ink); color:var(--parchment);}
+
+        /* forms */
+        form.contact-form{display:grid; gap:16px; max-width:560px;}
+        form.contact-form label{font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; color:var(--sage); display:block; margin-bottom:6px;}
+        form.contact-form input, form.contact-form textarea, form.contact-form select{
+            width:100%; padding:12px 13px; border:1px solid var(--line); background:var(--white);
+            font-family:'Public Sans',sans-serif; font-size:.95rem; border-radius:2px; color:var(--ink);
+        }
+        form.contact-form textarea{min-height:130px; resize:vertical;}
+        form.contact-form input:focus, form.contact-form textarea:focus, form.contact-form select:focus{
+            outline:2px solid var(--copper); outline-offset:1px;
+        }
+
+        /* video / doc grids */
+        .video-card{background:var(--white); border:1px solid var(--line);}
+        .video-thumb{
+            aspect-ratio:16/9; background:linear-gradient(135deg,#2C3B4A,#1D2A38);
+            display:flex; align-items:center; justify-content:center; position:relative;
+        }
+        .video-thumb .play{
+            width:56px;height:56px;border-radius:50%;background:rgba(246,241,230,.14);
+            border:1.5px solid rgba(246,241,230,.6); display:flex; align-items:center; justify-content:center;
+        }
+        .video-thumb .play::after{
+            content:""; border-style:solid; border-width:9px 0 9px 15px;
+            border-color:transparent transparent transparent var(--parchment); margin-left:4px;
+        }
+        .video-meta{padding:18px 20px;}
+        .video-meta .mono{color:var(--sage); margin-bottom:6px; display:block;}
+
+        .doc-row{
+            display:flex; align-items:center; gap:18px; padding:20px 22px;
+            background:var(--white); border:1px solid var(--line); border-top:none;
+        }
+        .doc-row:first-of-type{border-top:1px solid var(--line);}
+        .doc-icon{
+            width:38px; height:38px; flex-shrink:0; border-radius:2px;
+            background:var(--parchment-2); border:1px solid var(--line);
+            display:flex; align-items:center; justify-content:center;
+            font-family:'IBM Plex Mono',monospace; font-size:.62rem; font-weight:600; color:var(--copper);
+        }
+        .doc-info{flex:1;}
+        .doc-info .doc-title{font-weight:600; margin-bottom:3px;}
+        .doc-info .mono{color:var(--sage);}
+        .doc-dl{white-space:nowrap;}
+
+        /* footer */
+        footer.site{background:var(--dusk-2); color:rgba(246,241,230,.8); padding:56px 0 28px;}
+        .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;}
+        @media(max-width:760px){.footer-grid{grid-template-columns:1fr; gap:32px;}}
+        footer.site h4{color:var(--parchment); font-size:.95rem; font-family:'Public Sans',sans-serif; font-weight:700; letter-spacing:.03em;}
+        footer.site a{color:rgba(246,241,230,.78); text-decoration:none; display:block; margin-bottom:9px; font-size:.92rem;}
+        footer.site a:hover{color:var(--gold);}
+        .footer-bottom{
+            margin-top:44px; padding-top:22px; border-top:1px solid var(--line-dark);
+            font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:rgba(246,241,230,.5);
+            display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+        }
+
+        /* page visibility */
+        .page{display:none;}
+        .page.active{display:block; animation:fadeIn .35s ease;}
+        @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+
+        .quote-strip{
+            border-left:3px solid var(--copper); padding-left:22px; font-family:'Fraunces',serif;
+            font-size:1.3rem; font-weight:500; font-style:italic; color:var(--ink); max-width:42ch;
+        }
+
+        .tag{
+            display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.06em;
+            text-transform:uppercase; padding:4px 9px; border-radius:2px; border:1px solid var(--line);
+            color:var(--sage); margin-right:6px;
+        }
+
+        @media (prefers-reduced-motion: reduce){
+            html{scroll-behavior:auto;}
+            .page.active{animation:none;}
+        }
+
+        /* nav donate button */
+        .btn-donate{
+            background:var(--gold); color:var(--dusk-2); border:1px solid var(--gold);
+            font-weight:700; padding:9px 16px; font-size:.82rem;
+        }
+        .btn-donate:hover{background:#c8952f;}
+        .nav-actions{display:flex; align-items:center; gap:10px;}
+
+        /* scope note */
+        .scope-note{
+            background:var(--parchment-2); border:1px solid var(--line); border-left:3px solid var(--sage);
+            padding:16px 20px; font-size:.92rem; color:#3c4650; max-width:68ch; margin-top:22px;
+        }
+
+        /* important links bar */
+        .link-bar{display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 8px;}
+        .link-chip{
+            display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+            border:1px solid var(--line); background:var(--white); color:var(--ink);
+            padding:10px 16px; border-radius:2px; font-size:.88rem; font-weight:600;
+        }
+        .link-chip:hover{border-color:var(--copper); color:var(--copper);}
+        .link-chip .mono{font-weight:500; color:var(--sage); font-size:.68rem;}
+
+        /* issues accordion */
+        .issue-list{display:flex; flex-direction:column; gap:12px; margin-top:28px;}
+        .issue-item{background:var(--white); border:1px solid var(--line);}
+        .issue-item summary{
+            list-style:none; cursor:pointer; padding:20px 24px; display:flex;
+            align-items:center; justify-content:space-between; gap:16px;
+            font-family:'Fraunces',serif; font-weight:600; font-size:1.08rem;
+        }
+        .issue-item summary::-webkit-details-marker{display:none;}
+        .issue-item summary .plus{
+            font-family:'IBM Plex Mono',monospace; font-size:1.1rem; color:var(--copper);
+            flex-shrink:0; transition:transform .15s ease;
+        }
+        .issue-item[open] summary .plus{transform:rotate(45deg);}
+        .issue-item .issue-body{padding:0 24px 24px; max-width:70ch;}
+        .issue-item .issue-body p{color:#3c4650;}
+        .issue-item .issue-links{list-style:none; padding:0; margin:14px 0 0; display:flex; flex-direction:column; gap:8px;}
+        .issue-item .issue-links a{
+            font-size:.9rem; text-decoration:none; color:var(--copper); font-weight:600;
+            border-bottom:1px solid transparent;
+        }
+        .issue-item .issue-links a:hover{border-bottom-color:var(--copper);}
+
+        /* donate panel */
+        .donate-panel{
+            background:var(--dusk-2); color:var(--parchment); border:1px solid var(--line-dark);
+            padding:32px 30px;
+        }
+        .donate-panel h3{color:#fff;}
+        .donate-panel .mono{color:var(--gold);}
+        .donate-method{border-top:1px solid var(--line-dark); padding-top:18px; margin-top:18px;}
+        .donate-method:first-of-type{border-top:none; margin-top:0; padding-top:0;}
+        .donate-method h4{color:#fff; font-size:1rem; margin-bottom:6px;}
+        .donate-method p{color:rgba(246,241,230,.78); font-size:.92rem;}
+    </style>
+</head>
+<body>
+
+<header class="site">
+    <div class="nav-row">
+        <a href="#home" class="brand" onclick="showPage('home')">
+            <span class="peg">LT</span>
+            <span class="name">The Little Bow AI Data Centre Committee
+        <small>Facts · Documents · Decisions · Accountability</small>
+      </span>
+        </a>
+
+        <nav class="tabs" id="tabsNav">
+            <button data-page="home" class="active">Home</button>
+            <button data-page="proposal">The Proposal</button>
+            <button data-page="issues">The Issues</button>
+            <button data-page="history">History of Little Bow</button>
+            <button data-page="action">Take Action</button>
+            <button data-page="news">News</button>
+            <button data-page="documents">Documents</button>
+            <button data-page="media">Media</button>
+
+            <button data-page="contact">Contact</button>
+        </nav>
+        <div class="nav-actions">
+            <a href="#donate" class="btn btn-donate" onclick="showPage('donate')">Donate</a>
+            <button class="burger" id="burgerBtn" aria-label="Open menu">☰</button>
+        </div>
+    </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<main id="page-home" class="page active">
+    <section class="hero">
+        <div class="hero-inner">
+
+            <h1>This is the wrong location for an AI data centre.</h1>
+            <p class="lede">A large-scale AI data centre has been proposed on irrigated farmland beside Travers Reservoir, in the heart of Little Bow country. We're the ranchers, families, and long-time residents of this land, and we're asking decision-makers to choose a different site.</p>
+            <div class="hero-cta">
+                <a href="#action" class="btn btn-copper" onclick="showPage('action')">Take Action Now</a>
+                <a href="#proposal" class="btn btn-outline" onclick="showPage('proposal')">Read the Proposal</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <span class="kicker">Who, what, where, when, why</span>
+            <h2 class="h-lg">The essentials, at a glance.</h2>
+            <div class="facts" style="margin-top:24px; max-width:820px;">
+                <dl>
+                    <dt>Who</dt><dd>A private developer has filed to build a hyperscale AI data centre campus. See <a href="#documents" onclick="showPage('documents')">Documents</a> for the filing and proponent details.</dd>
+                    <dt>What</dt><dd>An industrial-scale AI data centre, with the electrical power draw and water demand that comes with one.</dd>
+                    <dt>Where</dt><dd>Productive, irrigated agricultural land adjoining Travers Reservoir, Vulcan County, Alberta.</dd>
+                    <dt>When</dt><dd>The application is moving through the regulatory process now  see <a href="#proposal" onclick="showPage('proposal')">The Proposal</a> for current status and deadlines.</dd>
+
+                    <dt>Why</dt><dd>This land, this water, and this community are the wrong fit for this kind of industrial development. See below.</dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-parchment2">
+        <div class="wrap">
+            <span class="kicker">Who we are</span>
+            <h2 class="h-lg">About the Committee</h2>
+            <p class="lead-p">"The Little Bow AI Data Centre Committee is a collaborative, volunteer-led group formed to provide an informed and balanced review of the proposed large-scale AI data centre development in Vulcan County."</p>
+            <p class="lead-p">The Committee brings together individuals with extensive professional experience across a broad range of disciplines, including engineering, land and resource development, regulatory affairs, government, environmental and land-use matters, corporate and business leadership, communications and media, and law.</p>
+            <p class="lead-p">This diverse expertise allows the Committee to assess the proposal from multiple perspectives including land-use planning, infrastructure, environmental impacts, public safety, regulatory compliance, economic development, and procedural fairness.</p>
+            <hr class="rule">
+            <div class="grid-3">
+                <div class="card">
+                    <span class="mono">01  The Proposal</span>
+                    <h3>What's actually being proposed</h3>
+                    <p>The filing, the site, and what it would mean for the land around Travers Reservoir.</p>
+                    <a href="#proposal" class="btn btn-ink-outline" onclick="showPage('proposal')" style="margin-top:6px;">View the proposal →</a>
+                </div>
+                <div class="card">
+                    <span class="mono">02  The Issues</span>
+                    <h3>Water, power, land, and process</h3>
+                    <p>The questions we're asking, organized by topic, with the research behind them.</p>
+                    <a href="#issues" class="btn btn-ink-outline" onclick="showPage('issues')" style="margin-top:6px;">See the issues →</a>
+                </div>
+                <div class="card">
+                    <span class="mono">03  The Response</span>
+                    <h3>What you can do</h3>
+                    <p>Formal comments, letters, meetings, and how to make your voice count.</p>
+                    <a href="#action" class="btn btn-ink-outline" onclick="showPage('action')" style="margin-top:6px;">Get involved →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dusk grid-tex-dark">
+        <div class="wrap">
+            <span class="kicker">Latest updates</span>
+            <h2 class="h-lg">News &amp; ways to help</h2>
+            <div class="grid-3" style="margin-top:36px;" id="newsGridHome">
+                <p class="mono" style="color:var(--gold);">Loading posts…</p>
+            </div>
+            <div style="margin-top:38px; display:flex; gap:14px; flex-wrap:wrap;">
+                <a href="#news" class="btn btn-outline" onclick="showPage('news')">View all news →</a>
+                <a href="#donate" class="btn btn-donate" onclick="showPage('donate')">Support this work  Donate →</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ============ NEWS ============ -->
+<main id="page-news" class="page">
+    <section style="padding-top:56px;">
+        <div class="wrap">
+            <span class="kicker">Stay informed</span>
+            <h2 class="h-lg">News &amp; Events</h2>
+            <p class="lead-p">Updates on the proposed AI data centre, regulatory milestones, and community meetings, posted as they happen.</p>
+            <hr class="rule">
+            <div class="grid-2" id="newsGridAll">
+                <p class="mono" style="color:var(--sage);">Loading posts…</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ============ THE PROPOSAL ============ -->
+<main id="page-proposal" class="page">
+    <section style="padding-top:56px;">
+        <div class="wrap">
+            <span class="kicker">Know the facts</span>
+            <h2 class="h-lg">The Proposal</h2>
+            <p class="lead-p">Here's what has been filed, what it would mean for the land around Travers Reservoir and Little Bow, and where the process stands today. We update this page as new filings become public  always with a source.</p>
+
+            <div class="grid-2" style="margin-top:44px; align-items:start;">
+                <div>
+                    <h3>What's being proposed</h3>
+                    <p>The proposal is to build a large-scale AI data centre campus on irrigated agricultural land adjoining Travers Reservoir. A project of this kind requires a substantial, continuous electrical power supply and significant water for cooling, along with new supporting infrastructure.</p>
+                    <p>The proponent's application states the project would bring investment and jobs to the region. Community members have asked for clearer evidence on water sourcing and allocation, power infrastructure requirements, the amount of productive farmland that would be taken out of production, and the long-term economic case  questions we're tracking below and in more depth on the <a href="#issues" onclick="showPage('issues')">Issues</a> page.</p>
+                    <h3 style="margin-top:36px;">Community concerns raised so far</h3>
+                    <ul style="padding-left:20px; color:#3c4650;">
+                        <li style="margin-bottom:10px;">Loss of some of Alberta's most productive irrigated farmland to industrial development.</li>
+                        <li style="margin-bottom:10px;">Water demand for cooling competing with an irrigation allocation that is already fully committed.</li>
+                        <li style="margin-bottom:10px;">New high-capacity power infrastructure and generation needed to serve the facility.</li>
+                        <li style="margin-bottom:10px;">Noise, light, and 24/7 operations next to a rural and recreational area.</li>
+                        <li style="margin-bottom:10px;">Limited detail so far on independent water and environmental impact assessments.</li>
+                        <li>Questions about long-term local economic benefit relative to the footprint and resources required.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr class="rule">
+
+
+
+            <div style="margin-top:44px;">
+                <a href="#documents" class="btn btn-copper" onclick="showPage('documents')">Read the filed documents →</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ============ THE ISSUES ============ -->
+<main id="page-issues" class="page">
+    <section style="padding-top:56px;">
+        <div class="wrap">
+            <span class="kicker">By the numbers, by the topic</span>
+            <h2 class="h-lg">The Issues</h2>
+            <p class="lead-p">The questions we're asking, organized by topic. Each section links to the research, filings, and organizations behind it. We'll keep adding sources as the record grows.</p>
+
+            <div class="issue-list">
+                <details class="issue-item" open>
+                    <summary>Environmental &amp; Water<span class="plus">+</span></summary>
+                    <div class="issue-body">
+                        <p>Cooling a facility of this scale requires a substantial, reliable water supply. We're asking what source is proposed, how it interacts with existing irrigation allocations that are already fully committed in this district, and what independent assessment exists of the impact on Travers Reservoir and the surrounding watershed.</p>
+                        <ul class="issue-links">
+                            <li><a href="#" target="_blank" rel="noopener">Alberta Utilities Commission  project filings</a></li>
+                            <li><a href="#" target="_blank" rel="noopener">Local irrigation district  water allocation background</a></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="issue-item">
+                    <summary>Agricultural Land<span class="plus">+</span></summary>
+                    <div class="issue-body">
+                        <p>This site sits on productive, irrigated farmland  a limited and difficult-to-replace resource in this part of Alberta. We're tracking how much land the project would take out of agricultural production, permanently, and what that means for the district's long-term food and farming capacity.</p>
+                        <ul class="issue-links">
+                            <li><a href="#" target="_blank" rel="noopener">Provincial farmland loss data</a></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="issue-item">
+                    <summary>Power &amp; Energy<span class="plus">+</span></summary>
+                    <div class="issue-body">
+                        <p>A facility like this requires a large, continuous electrical supply. We're asking what new generation or transmission infrastructure would be needed, who pays for it, and how it fits within the province's broader grid planning.</p>
+                        <ul class="issue-links">
+                            <li><a href="#" target="_blank" rel="noopener">Alberta Electric System Operator  planning documents</a></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="issue-item">
+                    <summary>Legal &amp; Regulatory<span class="plus">+</span></summary>
+                    <div class="issue-body">
+                        <p>We're tracking the approvals this project needs  provincial, municipal, and otherwise  and where each one stands. This includes county land-use bylaws, utility and environmental approvals, and any opportunities for public and landowner input at each stage.</p>
+                        <ul class="issue-links">
+                            <li><a href="#documents" onclick="showPage('documents')">Our filings &amp; submissions</a></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="issue-item">
+                    <summary>Safety<span class="plus">+</span></summary>
+                    <div class="issue-body">
+                        <p>Questions here include construction and operational traffic on rural roads, emergency response capacity for an industrial facility of this scale, and fire and water-security planning in a farming and recreational community.</p>
+                        <ul class="issue-links">
+                            <li><a href="#" target="_blank" rel="noopener">County emergency services planning</a></li>
+                        </ul>
+                    </div>
+                </details>
+
+
+            </div>
+
+
+        </div>
+    </section>
+</main>
+
+<!-- ============ HISTORY OF LITTLE BOW ============ -->
+<main id="page-history" class="page">
+    <section style="padding-top:56px;">
+        <div class="wrap">
+            <span class="kicker">Our story</span>
+            <h2 class="h-lg">History of Little Bow</h2>
+            <div class="grid-2" style="align-items:start;">
+                <div>
+                    <p class="lead-p">Long before it was a line on a proponent's map, Little Bow was  and is  a working landscape shaped by the river, the reservoir, and the families who settled and stayed.</p>
+                    <p>The Little Bow River and the irrigation works around Travers Reservoir have anchored ranching, irrigated farming, and community life in this part of southern Alberta for well over a century. Homesteaders broke the prairie sod in the early 1900s; irrigation and reservoir works through the mid-20th century turned dry grassland into some of the region's most productive irrigated farm country, while creating a reservoir that families and visitors still use every summer.</p>
+                    <p>What's held the community together isn't nostalgia  it's continuity. Many of the quarter-sections in this district have been farmed and ranched by the same families for three or four generations. The community hall, the irrigation district, the grazing co-op: these are institutions people built and maintained themselves, and they're part of why this proposal has struck such a nerve.</p>
+                </div>
+                <div class="timeline">
+                    <div class="tl-item">
+                        <span class="tl-date">Early 1900s</span>
+                        <h4 style="margin-bottom:4px;">Homestead settlement</h4>
+                        <p style="color:#3c4650;">Families begin homesteading the Little Bow River valley, breaking prairie for the first time.</p>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-date">Mid-1900s</span>
+                        <h4 style="margin-bottom:4px;">Reservoir &amp; irrigation works</h4>
+                        <p style="color:#3c4650;">Dam and canal construction reshapes the valley, forming the reservoir and enabling irrigated agriculture.</p>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-date">1954</span>
+                        <h4 style="margin-bottom:4px;">Provincial park established</h4>
+                        <p style="color:#3c4650;">Recreation lands along the reservoir are formally protected, drawing generations of campers and anglers.</p>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-date">Today</span>
+                        <h4 style="margin-bottom:4px;">A community defines its future</h4>
+                        <p style="color:#3c4650;">Little Bow residents organize to ensure the next chapter of this landscape is written with them, not around them.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ============ TAKE ACTION ============ -->
+<main id="page-action" class="page">
+    <section style="padding-top:56px;">
+        <div class="wrap">
+            <span class="kicker">Get involved</span>
+            <h2 class="h-lg">Take Action</h2>
+            <p class="lead-p">The decisions on this proposal are still being made  which means there's still time to shape them. If you're a resident of Vulcan County, your voice carries particular weight. Here's what you can do</p>
+
+            <div class="action-list" style="margin-top:40px;">
+
+                <div class="action-item">
+                    <span class="action-num">01</span>
+                    <div>
+                        <h3>Submit a formal comment to the regulator</h3>
+                        <p class="action-desc">Written submissions to the Alberta Utilities Commission and Vulcan County become part of the official record and carry the most procedural weight. Comments are strongest when they're specific  cite the facts, the concern, and what you're asking for.</p>
+                        <div class="action-actions">
+                            <a href="#" class="btn btn-copper">Submit a comment</a>
+                            <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">See filing guidance</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <span class="action-num">02</span>
+                    <div>
+                        <h3>Send a letter to your MLA and county councillor</h3>
+                        <p class="action-desc">Elected officials respond to volume. A short, personal letter  even five sentences  adds to the record they can't ignore. Use the template below as a starting point, then make it your own.</p>
+
+
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <span class="action-num">03</span>
+                    <div>
+                        <h3>Attend the next public meeting</h3>
+                        <p class="action-desc">Showing up in person is the clearest signal a room can send. Meetings are open to everyone, not just directly affected landowners  turnout matters even if you don't speak.</p>
+                        <div class="action-actions">
+                            <a href="#" class="btn btn-copper">Add meeting to calendar</a>
+                            <a href="#news" class="btn btn-ink-outline" onclick="showPage('news')">Check meeting dates</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <span class="action-num">04</span>
+                    <div>
+                        <h3>Sign on as a supporter</h3>
+                        <p class="action-desc">Join the community registry. It shows the regulator and elected officials the scale of concern, and it puts you on the list for meeting notices and deadline reminders.</p>
+                        <div class="action-actions">
+                            <a href="#contact" class="btn btn-copper" onclick="showPage('contact')">Add your name</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <span class="action-num">05</span>
+                    <div>
+                        <h3>Donate to support the committee's work</h3>
+                        <p class="action-desc">Independent research, technical review, and materials all take resources. Every dollar goes directly toward keeping this record public and accurate.</p>
+                        <div class="action-actions">
+                            <a href="#donate" class="btn btn-copper" onclick="showPage('donate')">Donate →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-item">
+                    <span class="action-num">06</span>
+                    <div>
+                        <h3>Share this with someone the proposal affects</h3>
+                        <p class="action-desc">The proposal moves fast; word of mouth is still how most of Little Bow finds out what's happening. Share this site with a neighbour, a family member, or your grazing co-op.</p>
+
+                    </div>
+                </div>
+
+                <div class="action-item" style="border-bottom:none;">
+                    <span class="action-num">07</span>
+                    <div>
+                        <h3>Volunteer your time or a skill</h3>
+                        <p class="action-desc">We need people to help with research, notetaking at meetings, mailouts, and keeping this site current. If you've got an hour a month, it helps.</p>
+                        <div class="action-actions">
+                            <a href="#contact" class="btn btn-copper" onclick="showPage('contact')">Offer to help</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ============ MEDIA ============ -->
+<main id="page-media" class="page">
+    <section style="padding-top:56px;">
+        <div class="wrap">
+            <span class="kicker">Watch, listen, read</span>
+            <h2 class="h-lg">Media</h2>
+            <p class="lead-p">Recordings from community meetings, explainers on the proposal, and the presentations we've given to date.</p>
+            <div class="grid-3" style="margin-top:36px;">
+                <div class="video-card">
+                    <iframe
+                            style="border-radius:12px"
+                            src="https://open.spotify.com/embed/episode/1uEQ4ll8nrMdBWCmDJ5vhE"
+                            width="100%"
+                            height="152"
+                            frameborder="0"
+                            allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                    </iframe>
+
+                    <div class="video-meta">
+                        <span class="mono">Podcast</span>
+                        <h3 style="font-size:1.05rem;">(insert podcast name)</h3>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ============ DOCUMENTS ============ -->
+<main id="page-documents" class="page">
+    <section style="padding-top:56px;">
+        <div class="wrap">
+            <span class="kicker">The record</span>
+            <h2 class="h-lg">Documents</h2>
+            <p class="lead-p"></p>
+
+            <span class="mono" style="display:block; margin-top:32px; color:var(--sage);">Key external sources</span>
+
+
+            <div style="margin-top:24px;">
+                <div class="doc-row">
+                    <div class="doc-icon">JPG</div>
+                    <div class="doc-info">
+                        <div class="doc-title">AI Data Centre  Facilities Application (as filed)</div>
+                        <span class="mono">Filed  see date · Proponent document</span>
+                    </div>
+                    <a href="documents/IMG_0272.JPG" class="btn btn-ink-outline doc-dl" download>Download</a>
+                </div>
+                <div class="doc-row">
+                    <div class="doc-icon">PNG</div>
+                    <div class="doc-info">
+                        <div class="doc-title">Site Map  Travers Reservoir / Little Bow Area</div>
+                        <span class="mono">Filed  see date · Proponent document</span>
+                    </div>
+                    <a href="documents/Screenshot_2026-06-15_233842.png" class="btn btn-ink-outline doc-dl" download>Download</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ============ DONATE ============ -->
+<main id="page-donate" class="page">
+    <section style="padding-top:56px;">
+        <div class="wrap">
+            <span class="kicker">Support this work</span>
+            <h2 class="h-lg">Donate</h2>
+            <p class="lead-p">Independent research, technical review, printing, and keeping this record public all take resources. The committee is entirely community-funded  every contribution helps.</p>
+
+            <div class="grid-2" style="margin-top:36px; align-items:start;">
+                <div class="donate-panel">
+                    <span class="mono">Ways to give</span>
+                    <div class="donate-method" style="margin-top:16px;">
+                        <h4>not sure yet</h4>
+                        <p>Send your donation to <strong style="color:#fff;">littlebow.aidc@gmail.com</strong>. Please include your name in the message so we can send a thank-you and, on request, a receipt.</p>
+                    </div>
+
+
+                </div>
+                <div>
+                    <h3>Where it goes</h3>
+                    <p>Donations fund the committee's core work: independent technical and legal review of filings, printing and mailouts, meeting costs, and the upkeep of this site. We're volunteer-run  there is no paid staff.</p>
+                    <h3 style="margin-top:28px;">A community effort</h3>
+                    <p>This committee is made up of residents, ranchers, and families of Little Bow and the Travers Reservoir area  not a professional advocacy organization. Contributions of any size help keep the information on this site current and accurate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ============ CONTACT ============ -->
+<main id="page-contact" class="page">
+    <section style="padding-top:56px;">
+        <div class="wrap">
+            <span class="kicker">Reach us</span>
+            <h2 class="h-lg">Contact</h2>
+            <div class="grid-2" style="align-items:start; margin-top:20px;">
+                <div>
+                    <p class="lead-p">Questions about the proposal, tips on new filings, or want to volunteer? We want to hear from you.</p>
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks  this is a demo form. Connect it to your email service or form backend to go live.');">
+                        <div>
+                            <label for="name">Name</label>
+                            <input id="name" type="text" required>
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input id="email" type="email" required>
+                        </div>
+                        <div>
+                            <label for="topic">I'm writing about</label>
+                            <select id="topic">
+                                <option>General question</option>
+                                <option>The AI data centre proposal</option>
+                                <option>Volunteering</option>
+                                <option>Media inquiry</option>
+
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-copper" style="justify-self:start;">Send message</button>
+                    </form>
+                </div>
+                <div class="facts">
+                    <span class="mono" style="color:var(--copper);">The Little Bow AI Data Centre Committee</span>
+                    <hr class="rule" style="margin:16px 0;">
+                    <dl>
+                        <dt>Email</dt><dd><a href="mailto:littlebow.aidc@gmail.com">littlebow.aidc@gmail.com</a></dd>
+                        <dt>Mailing address</dt><dd>Box 000, Little Bow, Alberta, Canada</dd>
+                        <dt>Meetings</dt><dd>Little Bow Community Hall  see News for dates</dd>
+                        <dt>Social</dt><dd><a href="#">Facebook</a> · <a href="#">Instagram</a></dd>
+                    </dl>
+                    <hr class="rule" style="margin:20px 0;">
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div>
+                <h4 style="margin-bottom:10px;">The Little Bow AI Data Centre Committee</h4>
+                <p style="max-width:38ch; font-size:.92rem; color:rgba(246,241,230,.75);">An independent, community-run site tracking the proposed AI data centre near Travers Reservoir and defending Little Bow's voice in the process. Facts. Documents. Decisions. Accountability.</p>
+            </div>
+            <div>
+                <h4>Site</h4>
+                <a href="#home" onclick="showPage('home')">Home</a>
+                <a href="#proposal" onclick="showPage('proposal')">The Proposal</a>
+                <a href="#issues" onclick="showPage('issues')">The Issues</a>
+                <a href="#history" onclick="showPage('history')">History of Little Bow</a>
+                <a href="#documents" onclick="showPage('documents')">Documents</a>
+            </div>
+            <div>
+                <h4>Get involved</h4>
+                <a href="#action" onclick="showPage('action')">Take Action</a>
+                <a href="#news" onclick="showPage('news')">News &amp; Events</a>
+                <a href="#media" onclick="showPage('media')">Media</a>
+                <a href="#donate" onclick="showPage('donate')">Donate</a>
+                <a href="#contact" onclick="showPage('contact')">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 The Little Bow AI Data Centre Committee. Community-run, not affiliated with any government body.</span>
+            <span>Site content is for information purposes  verify official filings with the regulator.</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function showPage(id){
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        var target = document.getElementById('page-' + id);
+        if(target){ target.classList.add('active'); }
+        document.querySelectorAll('nav.tabs button').forEach(b => {
+            b.classList.toggle('active', b.dataset.page === id);
+        });
+        document.getElementById('tabsNav').classList.remove('open');
+        window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+        history.replaceState(null, '', '#' + id);
+    }
+
+    document.querySelectorAll('nav.tabs button').forEach(btn => {
+        btn.addEventListener('click', () => showPage(btn.dataset.page));
+    });
+
+    document.getElementById('burgerBtn').addEventListener('click', () => {
+        document.getElementById('tabsNav').classList.toggle('open');
+    });
+
+    function copyShareLink(){
+        navigator.clipboard && navigator.clipboard.writeText(window.location.href.split('#')[0]);
+        var btn = event.target;
+        var old = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = old, 1500);
+    }
+
+    // load initial page from hash
+    window.addEventListener('DOMContentLoaded', () => {
+        var hash = window.location.hash.replace('#','');
+        var valid = ['home','news','proposal','issues','history','action','media','documents','donate','contact'];
+        if(valid.includes(hash)) showPage(hash);
+    });
+</script>
+
+<!-- ============ NEWS FEED (loaded from Google Sheet) ============ -->
+<script>
+(function(){
+    // Data comes from an Apps Script Web App deployment ("Execute as: Me",
+    // "Who has access: Anyone") whose doGet(e) reads the "Posts" tab and
+    // returns JSON.
+    var EXEC_URL = 'https://script.google.com/macros/s/AKfycbw-TP9qoKn9ULLhOLszILWAefs1M4PS8bX_72srzSwVX7g7NZB-lHuKxea1X-J9KQOPMw/exec';
+
+    function stripHtml(html){
+        return String(html || '').replace(/<[^>]*>/g, '');
+    }
+
+    function escapeHtml(str){
+        return String(str == null ? '' : str)
+            .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function truncate(str, max){
+        str = String(str || '');
+        if(str.length <= max) return str;
+        var cut = str.slice(0, max);
+        var lastSpace = cut.lastIndexOf(' ');
+        if(lastSpace > 0) cut = cut.slice(0, lastSpace);
+        return cut + '…';
+    }
+
+    function formatDate(raw){
+        if(!raw) return '';
+        // Handle gviz-style "Date(2026,0,15)" strings just in case (month is 0-indexed)
+        var m = /^Date\((\d+),(\d+),(\d+)/.exec(raw);
+        if(m){
+            var d = new Date(parseInt(m[1],10), parseInt(m[2],10), parseInt(m[3],10));
+            return d.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+        }
+        var d2 = new Date(raw);
+        if(!isNaN(d2.getTime())) return d2.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+        return String(raw);
+    }
+
+    function dateSortValue(raw){
+        var m = /^Date\((\d+),(\d+),(\d+)/.exec(raw || '');
+        if(m) return new Date(parseInt(m[1],10), parseInt(m[2],10), parseInt(m[3],10)).getTime();
+        var d = new Date(raw);
+        return isNaN(d.getTime()) ? 0 : d.getTime();
+    }
+
+    // Normalizes whatever shape the Apps Script doGet() returns into
+    // a flat array of { id, date, category, headline, body } objects.
+    function normalizeRows(json){
+        // Unwrap common wrapper shapes: { data: [...] }, { posts: [...] }, { rows: [...] }, { values: [...] }
+        if(json && !Array.isArray(json) && typeof json === 'object'){
+            var wrapperKey = ['data','posts','rows','values','items'].find(function(k){ return Array.isArray(json[k]); });
+            if(wrapperKey) json = json[wrapperKey];
+        }
+        if(!Array.isArray(json)) return [];
+
+        var rows = [];
+        if(json.length && Array.isArray(json[0])){
+            // Array of arrays. If the first row looks like headers, use it to map columns;
+            // otherwise assume the sheet's natural column order.
+            var headerCandidates = json[0].map(function(c){ return String(c).trim().toLowerCase(); });
+            var headerLooksRight = ['id','date','category','headline','body'].every(function(h){
+                return headerCandidates.indexOf(h) !== -1;
+            });
+            var startIdx = headerLooksRight ? 1 : 0;
+            var colIdx = headerLooksRight ? {
+                id: headerCandidates.indexOf('id'),
+                date: headerCandidates.indexOf('date'),
+                category: headerCandidates.indexOf('category'),
+                headline: headerCandidates.indexOf('headline'),
+                body: headerCandidates.indexOf('body')
+            } : { id:0, date:1, category:2, headline:3, body:4 };
+
+            for(var i = startIdx; i < json.length; i++){
+                var r = json[i];
+                rows.push({
+                    id: r[colIdx.id],
+                    date: r[colIdx.date],
+                    category: r[colIdx.category],
+                    headline: r[colIdx.headline],
+                    body: r[colIdx.body]
+                });
+            }
+        } else {
+            // Array of objects — normalize keys case-insensitively.
+            rows = json.map(function(obj){
+                var lower = {};
+                Object.keys(obj || {}).forEach(function(k){ lower[k.trim().toLowerCase()] = obj[k]; });
+                return {
+                    id: lower.id,
+                    date: lower.date,
+                    category: lower.category,
+                    headline: lower.headline,
+                    body: lower.body
+                };
+            });
+        }
+
+        var posts = rows.map(function(r){
+            return {
+                id: r.id,
+                date: formatDate(r.date),
+                sortTime: dateSortValue(r.date),
+                category: r.category || '',
+                headline: r.headline || '',
+                body: r.body || ''
+            };
+        }).filter(function(p){ return p.headline; });
+
+        posts.sort(function(a,b){ return b.sortTime - a.sortTime; });
+        return posts;
+    }
+
+    function renderNewsPage(posts){
+        var el = document.getElementById('newsGridAll');
+        if(!el) return;
+        if(!posts.length){
+            el.innerHTML = '<p class="mono" style="color:var(--sage);">No posts yet — check back soon.</p>';
+            return;
+        }
+        el.innerHTML = posts.map(function(p){
+            return '' +
+                '<div class="card news-card">' +
+                    '<span class="mono">' + escapeHtml(p.date) + (p.category ? ' · ' + escapeHtml(p.category) : '') + '</span>' +
+                    '<h3>' + escapeHtml(p.headline) + '</h3>' +
+                    '<p>' + p.body + '</p>' +
+                '</div>';
+        }).join('');
+    }
+
+    function renderHomeTeaser(posts){
+        var el = document.getElementById('newsGridHome');
+        if(!el) return;
+        var top = posts.slice(0, 3);
+        if(!top.length){
+            el.innerHTML = '<p class="mono" style="color:var(--gold);">No posts yet — check back soon.</p>';
+            return;
+        }
+        el.innerHTML = top.map(function(p){
+            return '' +
+                '<div class="card" style="background:rgba(246,241,230,.05); border-color:var(--line-dark);">' +
+                    '<span class="mono" style="color:var(--gold);">' + escapeHtml(p.date) + (p.category ? ' · ' + escapeHtml(p.category) : '') + '</span>' +
+                    '<h3 style="color:#fff;"><a href="#news" class="home-title-link" onclick="showPage(\'news\')">' + escapeHtml(p.headline) + '</a></h3>' +
+                    '<p style="color:rgba(246,241,230,.8);">' + escapeHtml(truncate(stripHtml(p.body), 160)) + '</p>' +
+                '</div>';
+        }).join('');
+    }
+
+    function showError(){
+        var msg = '<p class="mono" style="color:var(--copper);">Couldn\'t load posts. Make sure the Apps Script is deployed as a Web App with access set to "Anyone", and that doGet(e) returns the Posts data as JSON.</p>';
+        var a = document.getElementById('newsGridAll');
+        var h = document.getElementById('newsGridHome');
+        if(a) a.innerHTML = msg;
+        if(h) h.innerHTML = msg.replace('var(--copper)', 'var(--gold)');
+    }
+
+    fetch(EXEC_URL)
+        .then(function(res){
+            if(!res.ok) throw new Error('Network response was not ok (' + res.status + ')');
+            return res.json();
+        })
+        .then(function(json){
+            var posts = normalizeRows(json);
+            renderNewsPage(posts);
+            renderHomeTeaser(posts);
+        })
+        .catch(function(err){
+            console.error('Failed to load posts from Apps Script:', err);
+            showError();
+        });
+})();
+</script>
+
+</body>
+</html>
