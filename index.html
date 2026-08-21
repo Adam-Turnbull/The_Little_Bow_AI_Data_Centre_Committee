@@ -365,7 +365,7 @@
         .link-chip .mono{font-weight:500; color:var(--sage); font-size:.68rem;}
 
         /* issues accordion */
-        .issue-list{display:flex; flex-direction:column; gap:12px; margin-top:28px;}
+        .issue-list{display:flex; flex-direction:column; gap:12px; margin-top:28px; max-width:800px;}
         .issue-item{background:var(--white); border:1px solid var(--line);}
         .issue-item summary{
             list-style:none; cursor:pointer; padding:20px 24px; display:flex;
@@ -378,7 +378,7 @@
             flex-shrink:0; transition:transform .15s ease;
         }
         .issue-item[open] summary .plus{transform:rotate(45deg);}
-        .issue-item .issue-body{padding:0 24px 24px; max-width:70ch;}
+        .issue-item .issue-body{padding:0 24px 24px;}
         .issue-item .issue-body p{color:#3c4650;}
         .issue-item .issue-links{list-style:none; padding:0; margin:14px 0 0; display:flex; flex-direction:column; gap:8px;}
         .issue-item .issue-links a{
@@ -398,6 +398,24 @@
         .donate-method:first-of-type{border-top:none; margin-top:0; padding-top:0;}
         .donate-method h4{color:#fff; font-size:1rem; margin-bottom:6px;}
         .donate-method p{color:rgba(246,241,230,.78); font-size:.92rem;}
+
+        /* on wide screens, lay action items out as boxes side by side */
+        @media (min-width:1000px){
+            .action-list{
+                display:grid;
+                grid-template-columns:repeat(2, 1fr);
+                gap:20px;
+            }
+            .action-item{
+                grid-template-columns:56px 1fr;
+                background:var(--white);
+                border:1px solid var(--line);
+                padding:28px 26px;
+                margin:0;
+            }
+            .action-item:first-child{padding-top:28px;}
+            .action-item .action-desc{max-width:none;}
+        }
     </style>
 </head>
 <body>
@@ -545,6 +563,11 @@
                         <li style="margin-bottom:10px;">Limited detail so far on independent water and environmental impact assessments.</li>
                         <li>Questions about long-term local economic benefit relative to the footprint and resources required.</li>
                     </ul>
+                </div>
+
+                <div>
+                    <img src="images/proposal-sunset.jpg" alt="Sunset over Travers Reservoir, near the proposed data centre site" style="border-radius:4px;">
+                    <span class="mono" style="display:block; margin-top:10px; color:var(--sage);">Travers Reservoir</span>
                 </div>
 
             </div>
@@ -746,7 +769,7 @@
                     <span class="action-num">07</span>
                     <div>
                         <h3>Volunteer your time or a skill</h3>
-                        <p class="action-desc">We need people to help with research, notetaking at meetings, mailouts, and keeping this site current. If you've got an hour a month, it helps.</p>
+                        <p class="action-desc">We need people to help with research, note taking at meetings, mailouts, and keeping this site current. If you've got an hour a month, it helps.</p>
                         <div class="action-actions">
                             <a href="#contact" class="btn btn-copper" onclick="showPage('contact')">Offer to help</a>
                         </div>
@@ -931,7 +954,7 @@
         </div>
         <div class="footer-bottom">
             <span>© 2026 The Little Bow AI Data Centre Committee. Community-run, not affiliated with any government body.</span>
-            <span>Site content is for information purposes  verify official filings with the regulator.</span>
+
         </div>
     </div>
 </footer>
