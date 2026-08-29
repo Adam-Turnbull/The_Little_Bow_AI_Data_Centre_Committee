@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Little Bow AI Data Centre Committee  Facts on the Proposed AI Data Centre Near Travers Reservoir</title>
+    <title>The Vulcan Transparency Project Centre Committee  Facts on the Proposed AI Data Centre Near Travers Reservoir</title>
     <meta name="description" content="Independent, factual information on the AI data centre proposed for irrigated farmland near Travers Reservoir and Little Bow, Vulcan County  from the residents who live here.">
-    <meta property="og:title" content="The Little Bow AI Data Centre Committee  Facts. Documents. Decisions. Accountability.">
+    <meta property="og:title" content="The Vulcan Transparency Project Centre Committee  Facts. Documents. Decisions. Accountability.">
     <meta property="og:description" content="Independent, factual information on the AI data centre proposed for irrigated farmland near Travers Reservoir and Little Bow, Vulcan County.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +38,7 @@
             -webkit-font-smoothing:antialiased;
         }
         h1,h2,h3,h4{
+
             font-family:'Fraunces', Georgia, serif;
             font-weight:600;
             line-height:1.1;
@@ -80,53 +81,68 @@
             display:flex;
             align-items:center;
             justify-content:space-between;
-            padding:16px 28px;
+            padding:22px 32px;
             max-width:var(--max);
             margin:0 auto;
         }
         .brand{
-            display:flex; align-items:center; gap:12px;
+            display:flex; align-items:center; gap:14px;
             text-decoration:none; color:var(--parchment);
         }
         .brand .peg{
-            width:34px;height:34px;border-radius:50%;
+            width:42px;height:42px;border-radius:50%;
             background:var(--copper);
             display:flex;align-items:center;justify-content:center;
-            font-family:'Fraunces',serif; font-weight:700; color:var(--parchment);
+            font-family:'Fraunces',serif; font-weight:700; font-size:1.05rem; color:var(--parchment);
             flex-shrink:0;
         }
         .brand .name{
-            font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; line-height:1.15;
+            font-family:'Fraunces',serif; font-weight:600; font-size:1.4rem; line-height:1.18;
         }
         .brand .name small{
-            display:block; font-family:'IBM Plex Mono',monospace; font-size:.62rem;
-            letter-spacing:.08em; text-transform:uppercase; color:var(--gold); font-weight:500; margin-top:2px;
+            display:block; font-family:'IBM Plex Mono',monospace; font-size:.7rem;
+            letter-spacing:.08em; text-transform:uppercase; color:var(--gold); font-weight:500; margin-top:4px;
         }
-        nav.tabs{display:flex; gap:2px; flex-wrap:wrap;flex:1;justify-content:flex-end;}
+        .nav-tabs-row{
+            border-top:1px solid var(--line-dark);
+        }
+        .nav-tabs-inner{
+            max-width:var(--max); margin:0 auto;
+            padding:6px 32px;
+            overflow-x:auto;
+            scrollbar-width:thin;
+        }
+        nav.tabs{
+            display:flex; gap:4px;
+            flex-wrap:nowrap;
+            white-space:nowrap;
+            justify-content:center;
+            width:max-content;
+            margin:0 auto;
+        }
         nav.tabs button{
             background:none; border:none; cursor:pointer;
             color:var(--parchment); opacity:.72;
-            font-family:'Public Sans',sans-serif; font-weight:600; font-size:.86rem;
-            padding:10px 13px; border-radius:3px;
+            font-family:'Public Sans',sans-serif; font-weight:600; font-size:1rem;
+            padding:14px 18px; border-radius:3px;
             position:relative;
+            flex-shrink:0;
             transition:opacity .15s, background .15s;
         }
         nav.tabs button:hover{opacity:1; background:rgba(246,241,230,0.07);}
         nav.tabs button.active{opacity:1; color:var(--white);}
         nav.tabs button.active::after{
-            content:""; position:absolute; left:12px; right:12px; bottom:3px; height:2px;
+            content:""; position:absolute; left:14px; right:14px; bottom:6px; height:2px;
             background:var(--copper);
         }
         .burger{display:none; background:none;border:none;color:var(--parchment);font-size:1.5rem;cursor:pointer;}
 
-        @media (max-width:920px){
-            nav.tabs{
-                display:none; position:absolute; top:100%; left:0; right:0;
-                background:var(--dusk-2); flex-direction:column; padding:8px 12px 16px;
-                border-bottom:1px solid var(--line-dark);
-            }
-            nav.tabs.open{display:flex;}
-            nav.tabs button{text-align:left; width:100%; padding:12px 8px;}
+        @media (max-width:1180px){
+            .nav-tabs-row{display:none;}
+            .nav-tabs-row.open{display:block;}
+            .nav-tabs-inner{overflow-x:visible;}
+            nav.tabs{flex-direction:column; flex-wrap:nowrap; white-space:normal; width:auto; padding:8px 0;}
+            nav.tabs button{text-align:left; width:100%; padding:14px 12px;}
             .burger{display:block;}
         }
 
@@ -145,6 +161,67 @@
         .btn-ink-outline{border-color:var(--ink); color:var(--ink);}
         .btn-ink-outline:hover{background:rgba(31,41,51,0.06);}
         .btn-sage{background:var(--sage); color:var(--white);}
+
+        /* ---------- breaking bar ---------- */
+        .breaking-bar{
+            background:var(--copper);
+            color:var(--white);
+            position:sticky; top:0; z-index:49;
+        }
+        .breaking-inner{
+            max-width:var(--max); margin:0 auto; padding:10px 28px;
+            display:flex; align-items:center; gap:12px;
+        }
+        .breaking-tag{
+            font-family:'IBM Plex Mono',monospace; font-size:.7rem;
+            letter-spacing:.08em; text-transform:uppercase; font-weight:700;
+            background:var(--copper-dark); padding:3px 8px; border-radius:2px;
+            flex-shrink:0;
+        }
+        .breaking-inner a{
+            font-family:'Public Sans',sans-serif; font-weight:600; font-size:.92rem;
+            text-decoration:none; color:var(--white); flex:1;
+            overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+        }
+        .breaking-inner a:hover{text-decoration:underline;}
+        .breaking-inner button{
+            background:none; border:none; color:var(--white); opacity:.75;
+            cursor:pointer; font-size:.9rem; flex-shrink:0; padding:4px;
+        }
+        .breaking-inner button:hover{opacity:1;}
+
+        /* ---------- updates spotlight ---------- */
+        .update-spotlight{
+            display:grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap:36px;
+            align-items:stretch;
+        }
+        .update-doc iframe{
+            display:block;
+            width:100%;
+            border-radius:12px;
+        }
+        .update-meta{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+        .update-meta h3{
+            font-family:'Fraunces', Georgia, serif;
+            font-size:1.5rem;
+            font-weight:600;
+            line-height:1.15;
+            color:var(--white);
+            margin:10px 0 12px;
+        }
+        .update-meta p{
+            color:rgba(246,241,230,.82);
+            line-height:1.5;
+        }
+        @media (max-width: 820px){
+            .update-spotlight{ grid-template-columns:1fr; }
+        }
 
         /* ---------- hero ---------- */
         .hero{
@@ -424,30 +501,42 @@
     <div class="nav-row">
         <a href="#home" class="brand" onclick="showPage('home')">
             <span class="peg">LT</span>
-            <span class="name">The Little Bow AI Data Centre Committee
+            <span class="name">Vulcan Transparency Project
         <small>Facts · Documents · Decisions · Accountability</small>
       </span>
         </a>
 
-
-        <nav class="tabs" id="tabsNav">
-            <button data-page="home" class="active">Home</button>
-            <button data-page="proposal">The Proposal</button>
-            <button data-page="issues">The Issues</button>
-            <button data-page="history">History of Little Bow</button>
-            <button data-page="action">Take Action</button>
-            <button data-page="news">Committee Updates</button>
-            <button data-page="documents">Documents</button>
-            <button data-page="media">Media</button>
-
-            <button data-page="contact">Contact</button>
-        </nav>
         <div class="nav-actions">
             <a href="#donate" class="btn btn-donate" onclick="showPage('donate')">Donate</a>
             <button class="burger" id="burgerBtn" aria-label="Open menu">☰</button>
         </div>
     </div>
+
+    <div class="nav-tabs-row" id="tabsNav">
+        <div class="nav-tabs-inner">
+            <nav class="tabs">
+                <button data-page="home" class="active">Home</button>
+                <button data-page="proposal">Proposal</button>
+                <button data-page="issues">Issues</button>
+                <button data-page="history">History of Little Bow</button>
+                <button data-page="action">Take Action</button>
+                <button data-page="news">Committee Updates</button>
+                <button data-page="documents">Documents</button>
+                <button data-page="media">Media</button>
+                <button data-page="contact">Contact</button>
+            </nav>
+        </div>
+    </div>
 </header>
+
+<div id="breakingBar" class="breaking-bar" style="display:none;">
+    <div class="breaking-inner">
+        <span class="breaking-tag">Breaking</span>
+        <a href="#news" id="breakingLink"></a>
+        <button id="breakingClose" aria-label="Dismiss">✕</button>
+    </div>
+</div>
+
 
 <!-- ============ HOME ============ -->
 <main id="page-home" class="page active">
@@ -459,6 +548,31 @@
             <div class="hero-cta">
                 <a href="#action" class="btn btn-copper" onclick="showPage('action')">Take Action Now</a>
                 <a href="documents/AI Datacenter Tech Primer.pdf" class="btn btn-outline" onclick="showPage('proposal')">what is an AI data centre</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dusk grid-tex-dark">
+        <div class="wrap">
+            <span class="kicker">Latest update</span>
+            <h2 class="h-lg">Updates</h2>
+            <div class="update-spotlight" style="margin-top:32px;">
+                <div class="update-doc">
+                    <iframe
+                            src="documents/Open%20Letter%20to%20Danielle%20Smith%20August%2020th,%202026.pdf"
+                            width="100%"
+                            height="480"
+                            style="border:none; border-radius:12px;">
+                    </iframe>
+                </div>
+                <div class="update-meta">
+                    <span class="mono" style="color:var(--gold);">Document — August 20th, 2026</span>
+                    <h3>Open Letter to Premier Danielle Smith</h3>
+                    <p>Our formal letter to the Premier outlining the community's concerns about the proposed AI data centre near Travers Reservoir.</p>
+                    <div style="margin-top:22px;">
+                        <a href="#media" class="btn btn-outline" onclick="showPage('media')">See more →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -484,7 +598,7 @@
         <div class="wrap">
             <span class="kicker">Who we are</span>
             <h2 class="h-lg">About the Committee</h2>
-            <p class="lead-p">"The Little Bow AI Data Centre Committee is a collaborative, volunteer-led group formed to provide an informed and balanced review of the proposed large-scale AI data centre development in Vulcan County."</p>
+            <p class="lead-p">"The Vulcan Transparency Project is a collaborative, volunteer-led group formed to provide an informed and balanced review of the proposed large-scale AI data centre development in Vulcan County."</p>
             <p class="lead-p">The Committee brings together individuals with extensive professional experience across a broad range of disciplines, including engineering, land and resource development, regulatory affairs, government, environmental and land-use matters, corporate and business leadership, communications and media, and law.</p>
             <p class="lead-p">This diverse expertise allows the Committee to assess the proposal from multiple perspectives including land-use planning, infrastructure, environmental impacts, public safety, regulatory compliance, economic development, and procedural fairness.</p>
             <hr class="rule">
@@ -597,10 +711,10 @@
                 <details class="issue-item" open>
                     <summary>Environmental<span class="plus">+</span></summary>
                     <div class="issue-body">
-                        <p>Cooling a facility of this scale requires a substantial, reliable water supply. We're asking what source is proposed, how it interacts with existing irrigation allocations that are already fully committed in this district, and what independent assessment exists of the impact on Travers Reservoir and the surrounding watershed.</p>
+                        <p>Beyond water use, a facility of this scale raises broader ecological questions for the land and reservoir it would sit beside. We're asking what independent environmental assessment has been done on Travers Reservoir and the surrounding watershed, how the development would affect wildlife habitat and bird corridors in the area, and what safeguards are proposed for air quality, noise, and light pollution from a facility that would run continuously, day and night.</p>
                         <ul class="issue-links">
-                            <li><a href="#" target="_blank" rel="noopener">Alberta Utilities Commission  project filings</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">Local irrigation district  water allocation background</a></li>
+                            <li><a href="#" target="_blank" rel="noopener">Alberta Utilities Commission — project filings</a></li>
+                            <li><a href="#" target="_blank" rel="noopener">Independent environmental assessment status</a></li>
                         </ul>
                     </div>
                 </details>
@@ -608,10 +722,10 @@
                 <details class="issue-item">
                     <summary>Water<span class="plus">+</span></summary>
                     <div class="issue-body">
-                        <p>Cooling a facility of this scale requires a substantial, reliable water supply. We're asking what source is proposed, how it interacts with existing irrigation allocations that are already fully committed in this district, and what independent assessment exists of the impact on Travers Reservoir and the surrounding watershed.</p>
+                        <p>Cooling a facility of this scale requires a large, continuous water supply. We're asking what source is proposed, how it interacts with irrigation allocations that are already fully committed in this district, and what independent assessment exists of the impact on Travers Reservoir, the surrounding watershed, and downstream users.</p>
                         <ul class="issue-links">
                             <li><a href="https://www.ssrid.com/" target="_blank" rel="noopener">South Saskatchewan River irrigation district</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">Local irrigation district  water allocation background</a></li>
+                            <li><a href="#" target="_blank" rel="noopener">Local irrigation district — water allocation background</a></li>
                         </ul>
                     </div>
                 </details>
@@ -890,6 +1004,14 @@
                 <div class="doc-row">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
+                        <div class="doc-title">Open Letter to Danielle Smith August 20th, 2026</div>
+                        <span class="mono">Filed  see date</span>
+                    </div>
+                    <a href="documents/Open Letter to Danielle Smith August 20th, 2026" class="btn btn-ink-outline doc-dl" download>Download</a>
+                </div>
+                <div class="doc-row">
+                    <div class="doc-icon">PDF</div>
+                    <div class="doc-info">
                         <div class="doc-title">2026-05-19 Response to Access to Information Request - Fire Report - Travers Solar</div>
                         <span class="mono">Filed  see date</span>
                     </div>
@@ -1048,7 +1170,7 @@
                     </form>
                 </div>
                 <div class="facts">
-                    <span class="mono" style="color:var(--copper);">The Little Bow AI Data Centre Committee</span>
+                    <span class="mono" style="color:var(--copper);">Vulcan Transparency Project</span>
                     <hr class="rule" style="margin:16px 0;">
                     <dl>
                         <dt>Email</dt><dd><a href="mailto:littlebow.aidc@gmail.com">littlebow.aidc@gmail.com</a></dd>
@@ -1068,7 +1190,7 @@
     <div class="wrap">
         <div class="footer-grid">
             <div>
-                <h4 style="margin-bottom:10px;">The Little Bow AI Data Centre Committee</h4>
+                <h4 style="margin-bottom:10px;">Vulcan Transparency Project</h4>
                 <p style="max-width:38ch; font-size:.92rem; color:rgba(246,241,230,.75);">An independent, community-run site tracking the proposed 2.4 GW hyperscale AI data centre near Travers Reservoir and defending Little Bow's voice in the process. Facts. Documents. Decisions. Accountability.</p>
             </div>
             <div>
@@ -1090,7 +1212,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <span>© 2026 The Little Bow AI Data Centre Committee. Community-run, not affiliated with any government body.</span>
+            <span>© 2026 Vulcan Transparency Project. Community-run, not affiliated with any government body.</span>
 
         </div>
     </div>
@@ -1143,6 +1265,45 @@
 
     function stripHtml(html){
         return String(html || '').replace(/<[^>]*>/g, '');
+    }
+    function extractUrl(text){
+        var match = String(text || '').match(/https?:\/\/[^\s<]+/i);
+        return match ? match[0] : '';
+    }
+
+    function renderBreakingBar(posts){
+        var bar = document.getElementById('breakingBar');
+        if(!bar || !posts.length) return;
+        if(sessionStorage.getItem('breakingDismissed')) return;
+
+        var latest = posts[0];
+        if(!latest.category || latest.category.toLowerCase() !== 'breaking') return;
+
+        var url = extractUrl(latest.headline) || extractUrl(latest.body);
+
+        var link = document.getElementById('breakingLink');
+        var cleanHeadline = latest.headline.replace(/https?:\/\/[^\s<]+/i, '').trim();
+        var snippet = truncate(stripHtml(latest.body).replace(/https?:\/\/[^\s<]+/i, '').trim(), 90);
+        link.textContent = cleanHeadline + (snippet ? ' — ' + snippet : '');
+
+        if(url){
+            link.href = url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.onclick = null;
+        } else {
+            link.href = '#news';
+            link.removeAttribute('target');
+            link.removeAttribute('rel');
+            link.onclick = function(){ showPage('news'); };
+        }
+
+        bar.style.display = 'block';
+
+        document.getElementById('breakingClose').onclick = function(){
+            bar.style.display = 'none';
+            sessionStorage.setItem('breakingDismissed', '1');
+        };
     }
 
     function escapeHtml(str){
@@ -1294,10 +1455,12 @@
             if(!res.ok) throw new Error('Network response was not ok (' + res.status + ')');
             return res.json();
         })
+
         .then(function(json){
             var posts = normalizeRows(json);
             renderNewsPage(posts);
             renderHomeTeaser(posts);
+            renderBreakingBar(posts);
         })
         .catch(function(err){
             console.error('Failed to load posts from Apps Script:', err);
