@@ -624,23 +624,17 @@
         </div>
     </section>
 
-    <section class="section-dusk grid-tex-dark" style="padding-top:40px; padding-bottom:8px;">
-        <div class="wrap">
-            <a href="#news" id="latestInfoBox" class="latest-box" onclick="showPage('news')">
-                <span class="mono latest-tag" id="latestInfoTag">Latest</span>
-                <h3 id="latestInfoHeadline">Loading the latest update…</h3>
-                <p id="latestInfoSnippet"></p>
-            </a>
-            <div style="margin-top:18px;">
-                <a href="#documents" class="btn btn-outline" onclick="showPage('documents')">View documents →</a>
-            </div>
-        </div>
-    </section>
-
     <section class="section-dusk grid-tex-dark">
         <div class="wrap">
             <span class="kicker">Latest update</span>
             <h2 class="h-lg">Updates</h2>
+
+            <a href="#news" id="latestInfoBox" class="latest-box" onclick="showPage('news')" style="margin-top:28px;">
+                <span class="mono latest-tag" id="latestInfoTag">Latest</span>
+                <h3 id="latestInfoHeadline">Loading the latest update…</h3>
+                <p id="latestInfoSnippet"></p>
+            </a>
+
             <div class="update-spotlight" style="margin-top:32px;">
                 <div class="update-doc">
                     <iframe
@@ -649,6 +643,9 @@
                             height="480"
                             style="border:none; border-radius:12px;">
                     </iframe>
+                    <div style="margin-top:18px;">
+                        <a href="#documents" class="btn btn-outline" onclick="showPage('documents')">View documents →</a>
+                    </div>
                 </div>
 
             </div>
