@@ -81,13 +81,16 @@
             display:flex;
             align-items:center;
             justify-content:space-between;
-            padding:22px 32px;
+            gap:24px;
+            padding:16px 32px;
             max-width:var(--max);
             margin:0 auto;
+            flex-wrap:nowrap;
         }
         .brand{
             display:flex; align-items:center; gap:14px;
             text-decoration:none; color:var(--parchment);
+            flex-shrink:0;
         }
         .brand .peg{
             width:42px;height:42px;border-radius:50%;
@@ -104,11 +107,10 @@
             letter-spacing:.08em; text-transform:uppercase; color:var(--gold); font-weight:500; margin-top:4px;
         }
         .nav-tabs-row{
-            border-top:1px solid var(--line-dark);
+            flex:1 1 auto;
+            min-width:0;
         }
         .nav-tabs-inner{
-            max-width:var(--max); margin:0 auto;
-            padding:6px 32px;
             overflow-x:auto;
             scrollbar-width:thin;
         }
@@ -135,13 +137,14 @@
             content:""; position:absolute; left:14px; right:14px; bottom:6px; height:2px;
             background:var(--copper);
         }
-        .burger{display:none; background:none;border:none;color:var(--parchment);font-size:1.5rem;cursor:pointer;}
+        .burger{display:none; background:none;border:none;color:var(--parchment);font-size:1.5rem;cursor:pointer; flex-shrink:0;}
 
         @media (max-width:1180px){
-            .nav-tabs-row{display:none;}
-            .nav-tabs-row.open{display:block;}
+            .nav-row{flex-wrap:wrap;}
+            .nav-tabs-row{display:none; flex-basis:100%; order:3;}
+            .nav-tabs-row.open{display:block; border-top:1px solid var(--line-dark); margin-top:12px; padding-top:6px;}
             .nav-tabs-inner{overflow-x:visible;}
-            nav.tabs{flex-direction:column; flex-wrap:nowrap; white-space:normal; width:auto; padding:8px 0;}
+            nav.tabs{flex-direction:column; flex-wrap:nowrap; white-space:normal; width:auto; margin:0; padding:8px 0;}
             nav.tabs button{text-align:left; width:100%; padding:14px 12px;}
             .burger{display:block;}
         }
@@ -221,6 +224,36 @@
         }
         @media (max-width: 820px){
             .update-spotlight{ grid-template-columns:1fr; }
+        }
+
+        /* ---------- latest info box (home) ---------- */
+        .latest-box{
+            display:block;
+            background:rgba(246,241,230,.05);
+            border:1px solid var(--line-dark);
+            border-left:3px solid var(--copper);
+            border-radius:8px;
+            padding:22px 26px;
+            max-width:760px;
+            text-decoration:none;
+            transition:background .15s;
+        }
+        .latest-box:hover{background:rgba(246,241,230,.09);}
+        .latest-box .latest-tag{
+            color:var(--gold);
+        }
+        .latest-box h3{
+            font-family:'Fraunces', Georgia, serif;
+            font-size:1.25rem;
+            font-weight:600;
+            line-height:1.2;
+            color:var(--white);
+            margin:8px 0 6px;
+        }
+        .latest-box p{
+            color:rgba(246,241,230,.82);
+            margin:0;
+            line-height:1.5;
         }
 
         /* ---------- hero ---------- */
@@ -372,6 +405,7 @@
             background:var(--white); border:1px solid var(--line); border-top:none;
         }
         .doc-row:first-of-type{border-top:1px solid var(--line);}
+        .doc-row.doc-hidden{display:none;}
         .doc-icon{
             width:38px; height:38px; flex-shrink:0; border-radius:2px;
             background:var(--parchment-2); border:1px solid var(--line);
@@ -382,6 +416,44 @@
         .doc-info .doc-title{font-weight:600; margin-bottom:3px;}
         .doc-info .mono{color:var(--sage);}
         .doc-dl{white-space:nowrap;}
+        .doc-tag{
+            font-family:'IBM Plex Mono',monospace; font-size:.68rem; font-weight:600;
+            letter-spacing:.04em; text-transform:uppercase; color:var(--copper);
+            background:rgba(193,96,44,0.1); border:1px solid rgba(193,96,44,0.3);
+            padding:3px 8px; border-radius:2px; white-space:nowrap; flex-shrink:0;
+        }
+
+        /* ---------- document search & filter ---------- */
+        .doc-toolbar{
+            display:flex; flex-wrap:wrap; align-items:center; gap:14px;
+            margin-top:24px; margin-bottom:20px;
+        }
+        .doc-search{
+            position:relative; flex:1 1 260px; min-width:220px; max-width:420px;
+        }
+        .doc-search input{
+            width:100%; font-family:'Public Sans',sans-serif; font-size:.95rem;
+            padding:11px 16px 11px 38px; border:1px solid var(--line); border-radius:3px;
+            background:var(--white); color:var(--ink);
+        }
+        .doc-search input:focus{outline:2px solid var(--copper); outline-offset:1px;}
+        .doc-search::before{
+            content:"⚲"; position:absolute; left:13px; top:50%; transform:translateY(-50%) rotate(90deg);
+            color:var(--sage); font-size:1rem; pointer-events:none;
+        }
+        .doc-filters{display:flex; flex-wrap:wrap; gap:8px;}
+        .doc-filter-btn{
+            font-family:'IBM Plex Mono',monospace; font-size:.72rem; font-weight:600;
+            letter-spacing:.05em; text-transform:uppercase; cursor:pointer;
+            padding:9px 14px; border-radius:20px; border:1px solid var(--line);
+            background:var(--white); color:var(--ink); opacity:.75;
+            transition:opacity .15s, background .15s, color .15s, border-color .15s;
+        }
+        .doc-filter-btn:hover{opacity:1;}
+        .doc-filter-btn.active{
+            opacity:1; background:var(--copper); border-color:var(--copper); color:var(--white);
+        }
+        .doc-empty{padding:24px 0; color:var(--sage);}
 
         /* footer */
         footer.site{background:var(--dusk-2); color:rgba(246,241,230,.8); padding:56px 0 28px;}
@@ -500,31 +572,30 @@
 <header class="site">
     <div class="nav-row">
         <a href="#home" class="brand" onclick="showPage('home')">
-            <span class="peg">LT</span>
+            <span class="peg">VLT</span>
             <span class="name">Vulcan Transparency Project
         <small>Facts · Documents · Decisions · Accountability</small>
       </span>
         </a>
 
-        <div class="nav-actions">
-            <a href="#donate" class="btn btn-donate" onclick="showPage('donate')">Donate</a>
-            <button class="burger" id="burgerBtn" aria-label="Open menu">☰</button>
+        <div class="nav-tabs-row" id="tabsNav">
+            <div class="nav-tabs-inner">
+                <nav class="tabs">
+                    <button data-page="home" class="active">Home</button>
+                    <button data-page="proposal">Proposal</button>
+                    <button data-page="issues">Issues</button>
+                    <button data-page="history">History of Little Bow</button>
+                    <button data-page="action">Take Action</button>
+                    <button data-page="news">Updates</button>
+                    <button data-page="documents">Documents</button>
+                    <button data-page="contact">Contact</button>
+                </nav>
+            </div>
         </div>
-    </div>
 
-    <div class="nav-tabs-row" id="tabsNav">
-        <div class="nav-tabs-inner">
-            <nav class="tabs">
-                <button data-page="home" class="active">Home</button>
-                <button data-page="proposal">Proposal</button>
-                <button data-page="issues">Issues</button>
-                <button data-page="history">History of Little Bow</button>
-                <button data-page="action">Take Action</button>
-                <button data-page="news">Committee Updates</button>
-                <button data-page="documents">Documents</button>
-                <button data-page="media">Media</button>
-                <button data-page="contact">Contact</button>
-            </nav>
+        <div class="nav-actions">
+            <!-- <a href="#donate" class="btn btn-donate" onclick="showPage('donate')">Donate</a> -->
+            <button class="burger" id="burgerBtn" aria-label="Open menu">☰</button>
         </div>
     </div>
 </header>
@@ -544,10 +615,24 @@
         <div class="hero-inner">
 
             <h1>This is the wrong location for an AI data centre.</h1>
-            <p class="lede">A 2.4 GW hyperscale AI data centre has been proposed on the reservoir in the county of Vulcan. We're the families that have lived in the area more than 30 years and we're asking decision-makers to choose a different site.</p>
+            <p class="lede">A 2.4 gw hyperscale ai data centre has been proposed on agricultural land beside Travers Reservoir in the county of Vulcan. This is an Environmentally Significant Area, a critical irrigation resource, home to one of Alberta’s most respected children’s summer camp and the nearby community of Little Bow. </p>
+            <p class="lede"> We’re  the families that have lived in the area for more than 30 years and we're asking decision-makers to choose a different Site. Once this location is opened to industrial development there will be no going back.</p>
             <div class="hero-cta">
                 <a href="#action" class="btn btn-copper" onclick="showPage('action')">Take Action Now</a>
                 <a href="documents/AI Datacenter Tech Primer.pdf" class="btn btn-outline" onclick="showPage('proposal')">what is an AI data centre</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dusk grid-tex-dark" style="padding-top:40px; padding-bottom:8px;">
+        <div class="wrap">
+            <a href="#news" id="latestInfoBox" class="latest-box" onclick="showPage('news')">
+                <span class="mono latest-tag" id="latestInfoTag">Latest</span>
+                <h3 id="latestInfoHeadline">Loading the latest update…</h3>
+                <p id="latestInfoSnippet"></p>
+            </a>
+            <div style="margin-top:18px;">
+                <a href="#documents" class="btn btn-outline" onclick="showPage('documents')">View documents →</a>
             </div>
         </div>
     </section>
@@ -565,14 +650,7 @@
                             style="border:none; border-radius:12px;">
                     </iframe>
                 </div>
-                <div class="update-meta">
-                    <span class="mono" style="color:var(--gold);">Document — August 20th, 2026</span>
-                    <h3>Open Letter to Premier Danielle Smith</h3>
-                    <p>Our formal letter to the Premier outlining the community's concerns about the proposed AI data centre near Travers Reservoir.</p>
-                    <div style="margin-top:22px;">
-                        <a href="#media" class="btn btn-outline" onclick="showPage('media')">See more →</a>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -602,55 +680,107 @@
             <p class="lead-p">The Committee brings together individuals with extensive professional experience across a broad range of disciplines, including engineering, land and resource development, regulatory affairs, government, environmental and land-use matters, corporate and business leadership, communications and media, and law.</p>
             <p class="lead-p">This diverse expertise allows the Committee to assess the proposal from multiple perspectives including land-use planning, infrastructure, environmental impacts, public safety, regulatory compliance, economic development, and procedural fairness.</p>
             <hr class="rule">
-            <div class="grid-3">
-                <div class="card">
-                    <span class="mono">01  The Proposal</span>
-                    <h3>What's actually being proposed</h3>
-                    <p>The filing, the site, and what it would mean for the land around Travers Reservoir.</p>
-                    <a href="#proposal" class="btn btn-ink-outline" onclick="showPage('proposal')" style="margin-top:6px;">View the proposal →</a>
-                </div>
-                <div class="card">
-                    <span class="mono">02  The Issues</span>
-                    <h3>Water, power, land, and process</h3>
-                    <p>The questions we're asking, organized by topic, with the research behind them.</p>
-                    <a href="#issues" class="btn btn-ink-outline" onclick="showPage('issues')" style="margin-top:6px;">See the issues →</a>
-                </div>
-                <div class="card">
-                    <span class="mono">03  The Response</span>
-                    <h3>What you can do</h3>
-                    <p>Formal comments, letters, meetings, and how to make your voice count.</p>
-                    <a href="#action" class="btn btn-ink-outline" onclick="showPage('action')" style="margin-top:6px;">Get involved →</a>
-                </div>
-            </div>
+
         </div>
+
     </section>
 
     <section class="section-dusk grid-tex-dark">
         <div class="wrap">
-            <span class="kicker">Latest updates</span>
-            <h2 class="h-lg">News &amp; ways to help</h2>
-            <div class="grid-3" style="margin-top:36px;" id="newsGridHome">
-                <p class="mono" style="color:var(--gold);">Loading posts…</p>
-            </div>
+
             <div style="margin-top:38px; display:flex; gap:14px; flex-wrap:wrap;">
-                <a href="#news" class="btn btn-outline" onclick="showPage('news')">View all news →</a>
-                <a href="#donate" class="btn btn-donate" onclick="showPage('donate')">Support this work  Donate →</a>
+                <a href="#news" class="btn btn-outline" onclick="showPage('news')">View all updates →</a>
+                <!-- <a href="#donate" class="btn btn-donate" onclick="showPage('donate')">Support this work  Donate →</a> -->
             </div>
         </div>
     </section>
 
 </main>
 
-<!-- ============ NEWS ============ -->
+<!-- ============ UPDATES (news + media + committee updates) ============ -->
 <main id="page-news" class="page">
     <section style="padding-top:56px;">
         <div class="wrap">
             <span class="kicker">Stay informed</span>
-            <h2 class="h-lg">News &amp; Events</h2>
-            <p class="lead-p">Updates on the proposed AI data centre, regulatory milestones, and community meetings, posted as they happen.</p>
+            <h2 class="h-lg">Updates</h2>
+            <p class="lead-p">Committee updates, regulatory milestones, community meetings, and media coverage of the proposed AI data centre, posted as they happen.</p>
             <hr class="rule">
             <div class="grid-2" id="newsGridAll">
                 <p class="mono" style="color:var(--sage);">Loading posts…</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top:16px;">
+        <div class="wrap">
+            <span class="kicker">Watch, listen, read</span>
+            <h2 class="h-lg">Media coverage</h2>
+            <p class="lead-p">Recordings from community meetings, explainers on the proposal, and the presentations we've given to date.</p>
+
+            <div class="grid-2" style="margin-top:36px;">
+                <div class="video-card">
+                    <iframe
+                            style="border-radius:12px"
+                            src="https://www.youtube.com/embed/5qWJxhha97M?"
+                            width="100%"
+                            height="550"
+                            frameborder="0"
+                            allowfullscreen
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                    </iframe>
+                    <div class="video-meta">
+                        <span class="mono">Podcast</span>
+                        <h3 style="font-size:1.05rem;">Rural Revolt Over AI Data Centre</h3>
+                    </div>
+                </div>
+
+
+
+                <div class="video-card">
+                    <iframe
+                            style="border-radius:12px"
+                            src="https://www.ctvnews.ca/calgary/video/2026/08/06/vulcan-county-residents-pushing-back-against-data-centre/"
+                            width="100%"
+                            height="550"
+                            frameborder="0"
+                            allowfullscreen
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                    </iframe>
+                    <div class="video-meta">
+                        <span class="mono">News</span>
+                        <h3 style="font-size:1.05rem;">
+                            <a href="https://www.ctvnews.ca/calgary/video/2026/08/06/vulcan-county-residents-pushing-back-against-data-centre/" target="_blank" rel="noopener noreferrer">
+                                'Not here': Vulcan County residents push back against AI data centre proposal
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <iframe
+                            src="documents/Residents%20Fight%20Data%20Center%20August%204th,%202026.pdf"
+                            width="100%"
+                            height="550"
+                            style="border:none; border-radius:12px;">
+                    </iframe>
+                    <div class="video-meta">
+                        <span class="mono">Document</span>
+                        <h3 style="font-size:1.05rem;">Residents Fight Data Center — August 4th, 2026</h3>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <iframe
+                            src="documents/Open%20Letter%20to%20Danielle%20Smith%20August%2020th,%202026.pdf"
+                            width="100%"
+                            height="550"
+                            style="border:none; border-radius:12px;">
+                    </iframe>
+                    <div class="video-meta">
+                        <span class="mono">Document</span>
+                        <h3 style="font-size:1.05rem;">Open Letter to Danielle Smith — August 20th, 2026</h3>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -733,7 +863,21 @@
                 <details class="issue-item">
                     <summary>Agricultural Land<span class="plus">+</span></summary>
                     <div class="issue-body">
-                        <p>This site sits on productive, farmland  a limited and difficult-to-replace resource in this part of Alberta. We're tracking how much land the project would take out of agricultural production, permanently, and what that means for the district's long-term food and farming capacity.</p>
+                        <p>
+                            Agricultural production in Vulcan County is a top economic driver in Alberta, anchored by grain crops, oilseeds, and livestock operations. The local economy relies heavily on extensive dryland and irrigated farming, supported by regional water resources like the Bow River Irrigation District (BRID).
+                        </p>
+
+                        <p>
+                            A vital component of the BRID system is the Travers Reservoir which was created in the 1950's by building the Travers Dam on the Little Bow River.
+                        </p>
+
+                        <p>
+                            Water is initially diverted from the Bow River at the Carseland Weir, moves via the main canal into Lake McGregor, through a connecting canal into Travers Reservoir and the Little Bow Reservoir. This system provides irrigation to over 290,000 acres of farmland.
+                        </p>
+
+                        <p>
+                            The County of Vulcan includes over 1.01 million improved acres operated by approximately 1,050 farms. Vulcan County ranks as the third-highest overall gross agricultural-producing municipality in Alberta, historically reporting hundreds of millions in gross farm receipts, according to Statistics Canada data.
+                        </p>
                         <ul class="issue-links">
                             <li><a href="#" target="_blank" rel="noopener">Provincial farmland loss data</a></li>
                         </ul>
@@ -788,33 +932,36 @@
         <div class="wrap">
             <span class="kicker">Our story</span>
             <h2 class="h-lg">History of Little Bow</h2>
-            <div class="grid-2" style="align-items:start;">
-                <div>
-                    <p class="lead-p">Long before it was a line on a proponent's map, Little Bow was  and is  a working landscape shaped by the river, the reservoir, and the families who settled and stayed.</p>
-                    <p>The Little Bow River and the irrigation works around Travers Reservoir have anchored ranching, irrigated farming, and community life in this part of southern Alberta for well over a century. Homesteaders broke the prairie sod in the early 1900s; irrigation and reservoir works through the mid-20th century turned dry grassland into some of the region's most productive irrigated farm country, while creating a reservoir that families and visitors still use every summer.</p>
-                    <p>What's held the community together isn't nostalgia  it's continuity. Many of the quarter-sections in this district have been farmed and ranched by the same families for three or four generations. The community hall, the irrigation district, the grazing co-op: these are institutions people built and maintained themselves, and they're part of why this proposal has struck such a nerve.</p>
+            <div class="timeline" style="max-width:760px;">
+                <div class="tl-item">
+                    <span class="tl-date">Over 70 years ago</span>
+                    <h4 style="margin-bottom:4px;">Travers Reservoir established</h4>
+                    <p style="color:#3c4650;">Travers reservoir was established over 70 years ago and has become a critical part of the irrigation system in southern Alberta, supplying water to 300,000 acres of farm land.</p>
                 </div>
-                <div class="timeline">
-                    <div class="tl-item">
-                        <span class="tl-date">Early 1900s</span>
-                        <h4 style="margin-bottom:4px;">Homestead settlement</h4>
-                        <p style="color:#3c4650;">Families begin homesteading the Little Bow River valley, breaking prairie for the first time.</p>
-                    </div>
-                    <div class="tl-item">
-                        <span class="tl-date">Mid-1900s</span>
-                        <h4 style="margin-bottom:4px;">Reservoir &amp; irrigation works</h4>
-                        <p style="color:#3c4650;">Dam and canal construction reshapes the valley, forming the reservoir and enabling irrigated agriculture.</p>
-                    </div>
-                    <div class="tl-item">
-                        <span class="tl-date">1954</span>
-                        <h4 style="margin-bottom:4px;">Provincial park established</h4>
-                        <p style="color:#3c4650;">Recreation lands along the reservoir are formally protected, drawing generations of campers and anglers.</p>
-                    </div>
-                    <div class="tl-item">
-                        <span class="tl-date">Today</span>
-                        <h4 style="margin-bottom:4px;">A community defines its future</h4>
-                        <p style="color:#3c4650;">Little Bow residents organize to ensure the next chapter of this landscape is written with them, not around them.</p>
-                    </div>
+                <div class="tl-item">
+                    <span class="tl-date">Following the reservoir</span>
+                    <h4 style="margin-bottom:4px;">Little Bow parks established</h4>
+                    <p style="color:#3c4650;">Once the reservoir was complete, governments then established Little Bow Provincial Park and Little Bow Provincial Recreation Area to be used for recreational purposes. These parks are visited by thousands of Albertans every year.</p>
+                </div>
+                <div class="tl-item">
+                    <span class="tl-date">1980s</span>
+                    <h4 style="margin-bottom:4px;">Environmentally Significant Area designation</h4>
+                    <p style="color:#3c4650;">Given the unique nature of the man-made lake and these parks, the government recognized the area surrounding Travers reservoir as an Environmentally Significant Area (ESA) in the 1980s. The ESA now provides habitat for several species at risk.</p>
+                </div>
+                <div class="tl-item">
+                    <span class="tl-date">1981</span>
+                    <h4 style="margin-bottom:4px;">Southern Alberta Bible Camp founded</h4>
+                    <p style="color:#3c4650;">The Southern Alberta Bible Camp (SABC) was established on the north arm of the lake in 1981 and has become one Alberta's most respected childrens' summer camps.</p>
+                </div>
+                <div class="tl-item">
+                    <span class="tl-date">1990</span>
+                    <h4 style="margin-bottom:4px;">Little Bow community founded</h4>
+                    <p style="color:#3c4650;">In 1990, the first houses were built in the nearby community of Little Bow, which now includes 250 homes.</p>
+                </div>
+                <div class="tl-item">
+                    <span class="tl-date">June 2026</span>
+                    <h4 style="margin-bottom:4px;">Farmland rezoned for industrial use</h4>
+                    <p style="color:#3c4650;">In June of 2026, Vulcan County Council rezoned approximately 595 acres of farm land to industrial use, making way for one of the largest AI Data Centre developments contemplated in the province. The proposed development, a 2.4 GW AI Data Centre, would be located adjacent to the Travers Reservoir in Vulcan County.</p>
                 </div>
             </div>
         </div>
@@ -882,7 +1029,7 @@
                         <h3>Donate to support the committee's work</h3>
                         <p class="action-desc">Independent research, technical review, and materials all take resources. Every dollar goes directly toward keeping this record public and accurate.</p>
                         <div class="action-actions">
-                            <a href="#donate" class="btn btn-copper" onclick="showPage('donate')">Donate →</a>
+                            <!-- <a href="#donate" class="btn btn-copper" onclick="showPage('donate')">Donate →</a> -->
                         </div>
                     </div>
                 </div>
@@ -913,82 +1060,6 @@
 </main>
 
 <!-- ============ MEDIA ============ -->
-<main id="page-media" class="page">
-    <section style="padding-top:56px;">
-        <div class="wrap">
-            <span class="kicker">Watch, listen, read</span>
-            <h2 class="h-lg">Media</h2>
-            <p class="lead-p">Recordings from community meetings, explainers on the proposal, and the presentations we've given to date.</p>
-
-            <div class="grid-2" style="margin-top:36px;">
-                <div class="video-card">
-                    <iframe
-                            style="border-radius:12px"
-                            src="https://www.youtube.com/embed/5qWJxhha97M?"
-                            width="100%"
-                            height="550"
-                            frameborder="0"
-                            allowfullscreen
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                    </iframe>
-                    <div class="video-meta">
-                        <span class="mono">Podcast</span>
-                        <h3 style="font-size:1.05rem;">Rural Revolt Over AI Data Centre</h3>
-                    </div>
-                </div>
-
-
-
-                <div class="video-card">
-                    <iframe
-                            style="border-radius:12px"
-                            src="https://www.ctvnews.ca/calgary/video/2026/08/06/vulcan-county-residents-pushing-back-against-data-centre/"
-                            width="100%"
-                            height="550"
-                            frameborder="0"
-                            allowfullscreen
-                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                    </iframe>
-                    <div class="video-meta">
-                        <span class="mono">News</span>
-                        <h3 style="font-size:1.05rem;">
-                            <a href="https://www.ctvnews.ca/calgary/video/2026/08/06/vulcan-county-residents-pushing-back-against-data-centre/" target="_blank" rel="noopener noreferrer">
-                                'Not here': Vulcan County residents push back against AI data centre proposal
-                            </a>
-                        </h3>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <iframe
-                            src="documents/Residents%20Fight%20Data%20Center%20August%204th,%202026.pdf"
-                            width="100%"
-                            height="550"
-                            style="border:none; border-radius:12px;">
-                    </iframe>
-                    <div class="video-meta">
-                        <span class="mono">Document</span>
-                        <h3 style="font-size:1.05rem;">Residents Fight Data Center — August 4th, 2026</h3>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <iframe
-                            src="documents/Open%20Letter%20to%20Danielle%20Smith%20August%2020th,%202026.pdf"
-                            width="100%"
-                            height="550"
-                            style="border:none; border-radius:12px;">
-                    </iframe>
-                    <div class="video-meta">
-                        <span class="mono">Document</span>
-                        <h3 style="font-size:1.05rem;">Open Letter to Danielle Smith — August 20th, 2026</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
 <!-- ============ DOCUMENTS ============ -->
 <main id="page-documents" class="page">
     <section style="padding-top:56px;">
@@ -999,107 +1070,128 @@
 
             <span class="mono" style="display:block; margin-top:32px; color:var(--sage);">Key external sources</span>
 
+            <div class="doc-toolbar">
+                <div class="doc-search">
+                    <input type="text" id="docSearchInput" placeholder="Search documents…" aria-label="Search documents">
+                </div>
+                <div class="doc-filters" id="docFilters">
+                    <button type="button" class="doc-filter-btn active" data-category="all">All</button>
+                </div>
+            </div>
 
-            <div style="margin-top:24px;">
-                <div class="doc-row">
+            <div style="margin-top:24px;" id="docList">
+                <div class="doc-row" data-category="Government" data-date="2026-08-20">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Open Letter to Danielle Smith August 20th, 2026</div>
                         <span class="mono">Filed  see date</span>
                     </div>
+                    <span class="doc-tag">Government</span>
                     <a href="documents/Open Letter to Danielle Smith August 20th, 2026" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row">
+                <div class="doc-row" data-category="Regulatory" data-date="2026-05-19">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">2026-05-19 Response to Access to Information Request - Fire Report - Travers Solar</div>
                         <span class="mono">Filed  see date</span>
                     </div>
+                    <span class="doc-tag">Regulatory</span>
                     <a href="documents/2026-05-19 Response to Access to Information Request - Document Package.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row">
+                <div class="doc-row" data-category="Environment" data-date="2025-06-14">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Cumulative Effects Review - Dr. Brad Stelfox Assessment of Beacon CER  June 14, 2025</div>
                         <span class="mono">Filed  see date</span>
                     </div>
+                    <span class="doc-tag">Environment</span>
                     <a href="documents/30524_X0359_Dr Brad Stelfox Assessment of Beacon CER June 14, 2025_000389.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row">
+                <div class="doc-row" data-category="Technical">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">AI Datacenter Tech Primer</div>
                         <span class="mono">Background reference</span>
                     </div>
+                    <span class="doc-tag">Technical</span>
                     <a href="documents/AI Datacenter Tech Primer.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row">
+                <div class="doc-row" data-category="Legal">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 1985-006  McGregor, Travers  Little Bow Area Structure Maps</div>
                         <span class="mono">Filed  see date</span>
                     </div>
+                    <span class="doc-tag">Legal</span>
                     <a href="documents/Bylaw 1985-006 McGregor, Travers Little Bow Area Structure MAPS.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
 
-                <div class="doc-row">
+                <div class="doc-row" data-category="Legal">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 2026-007  Schedule 'A' Final</div>
                         <span class="mono">Filed  see date</span>
                     </div>
+                    <span class="doc-tag">Legal</span>
                     <a href="documents/Bylaw 2026-007 Schedule 'A' Final.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row">
+                <div class="doc-row" data-category="Legal">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 2026-007  Timeline</div>
                         <span class="mono">Filed  see date</span>
                     </div>
+                    <span class="doc-tag">Legal</span>
                     <a href="documents/Bylaw 2026-007 Timeline.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row">
+                <div class="doc-row" data-category="Proponent">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 2026-007 - Initial Data Centre Proposal</div>
                         <span class="mono">Proponent document</span>
                     </div>
+                    <span class="doc-tag">Proponent</span>
                     <a href="documents/Data centre proposal.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
 
-                <div class="doc-row">
+                <div class="doc-row" data-category="Legal">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Brief of Argument -  Ronald Girvitz  April 28, 2026</div>
                         <span class="mono">Filed  see date</span>
                     </div>
+                    <span class="doc-tag">Legal</span>
                     <a href="documents/Submissions.Ronald Girvitz.Apr 28.26.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row">
+                <div class="doc-row" data-category="Legal">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Vulcan County Objection  Bylaw 2026-007  Request for New Hearing</div>
                         <span class="mono">Filed  see date</span>
                     </div>
+                    <span class="doc-tag">Legal</span>
                     <a href="documents/Vulcan County Objection - Bylaw 2026-007 - Request for New Hearing.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
 
-                <div class="doc-row">
+                <div class="doc-row" data-category="Community">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 2026-007 Registrants Presentations</div>
                         <span class="mono">Filed  see date</span>
                     </div>
+                    <span class="doc-tag">Community</span>
                     <a href="documents/Attachment - Bylaw 2026-007 Registrants Presentations.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row">
+                <div class="doc-row" data-category="Community">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 2026-007 Written Responses</div>
                         <span class="mono">Filed  see date</span>
                     </div>
+                    <span class="doc-tag">Community</span>
                     <a href="documents/Attachment- Bylaw 2026-007 Written Responses.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
+                <p class="doc-empty mono" id="docEmptyMsg" style="display:none;">No documents match your search.</p>
             </div>
         </div>
     </section>
@@ -1205,9 +1297,8 @@
             <div>
                 <h4>Get involved</h4>
                 <a href="#action" onclick="showPage('action')">Take Action</a>
-                <a href="#news" onclick="showPage('news')">News &amp; Events</a>
-                <a href="#media" onclick="showPage('media')">Media</a>
-                <a href="#donate" onclick="showPage('donate')">Donate</a>
+                <a href="#news" onclick="showPage('news')">Updates</a>
+                <!-- <a href="#donate" onclick="showPage('donate')">Donate</a> -->
                 <a href="#contact" onclick="showPage('contact')">Contact</a>
             </div>
         </div>
@@ -1250,9 +1341,62 @@
     // load initial page from hash
     window.addEventListener('DOMContentLoaded', () => {
         var hash = window.location.hash.replace('#','');
-        var valid = ['home','news','proposal','issues','history','action','media','documents','donate','contact'];
+        var valid = ['home','news','proposal','issues','history','action','documents','donate','contact'];
         if(valid.includes(hash)) showPage(hash);
     });
+
+    // ---------- document search & category filter ----------
+    (function(){
+        var docList = document.getElementById('docList');
+        if(!docList) return;
+        var rows = Array.prototype.slice.call(docList.querySelectorAll('.doc-row'));
+        var filtersEl = document.getElementById('docFilters');
+        var searchInput = document.getElementById('docSearchInput');
+        var emptyMsg = document.getElementById('docEmptyMsg');
+        var activeCategory = 'all';
+
+        // Build filter pills from whatever categories are present on the rows
+        var categories = [];
+        rows.forEach(function(row){
+            var cat = row.getAttribute('data-category');
+            if(cat && categories.indexOf(cat) === -1) categories.push(cat);
+        });
+        categories.sort();
+        categories.forEach(function(cat){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'doc-filter-btn';
+            btn.setAttribute('data-category', cat);
+            btn.textContent = cat;
+            filtersEl.appendChild(btn);
+        });
+
+        function applyFilters(){
+            var term = (searchInput.value || '').trim().toLowerCase();
+            var visibleCount = 0;
+            rows.forEach(function(row){
+                var title = (row.querySelector('.doc-title') ? row.querySelector('.doc-title').textContent : '').toLowerCase();
+                var matchesCategory = activeCategory === 'all' || row.getAttribute('data-category') === activeCategory;
+                var matchesSearch = !term || title.indexOf(term) !== -1;
+                var show = matchesCategory && matchesSearch;
+                row.classList.toggle('doc-hidden', !show);
+                if(show) visibleCount++;
+            });
+            if(emptyMsg) emptyMsg.style.display = visibleCount ? 'none' : 'block';
+        }
+
+        filtersEl.addEventListener('click', function(e){
+            var btn = e.target.closest('.doc-filter-btn');
+            if(!btn) return;
+            activeCategory = btn.getAttribute('data-category');
+            filtersEl.querySelectorAll('.doc-filter-btn').forEach(function(b){
+                b.classList.toggle('active', b === btn);
+            });
+            applyFilters();
+        });
+
+        searchInput.addEventListener('input', applyFilters);
+    })();
 </script>
 
 <!-- ============ NEWS FEED (loaded from Google Sheet) ============ -->
@@ -1309,6 +1453,13 @@
     function escapeHtml(str){
         return String(str == null ? '' : str)
             .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function firstSentence(text){
+        var t = stripHtml(text || '').replace(/https?:\/\/[^\s<]+/i, '').trim();
+        if(!t) return '';
+        var m = t.match(/^[^.!?]*[.!?]/);
+        return m ? m[0].trim() : truncate(t, 160);
     }
 
     function truncate(str, max){
@@ -1448,7 +1599,58 @@
         var h = document.getElementById('newsGridHome');
         if(a) a.innerHTML = msg;
         if(h) h.innerHTML = msg.replace('var(--copper)', 'var(--gold)');
+        updateLatestInfoBox([]);
     }
+
+    // Picks whichever is more recent - the newest news/article post, or the
+    // newest dated document - and shows its headline (plus first sentence,
+    // for articles) in the homepage "latest" box.
+    function updateLatestInfoBox(posts){
+        var box = document.getElementById('latestInfoBox');
+        if(!box) return;
+        var tagEl = document.getElementById('latestInfoTag');
+        var headlineEl = document.getElementById('latestInfoHeadline');
+        var snippetEl = document.getElementById('latestInfoSnippet');
+
+        var latestPost = (posts && posts.length) ? posts[0] : null;
+        var postTime = latestPost ? latestPost.sortTime : -Infinity;
+
+        var latestDocRow = null, latestDocTime = -Infinity;
+        document.querySelectorAll('#docList .doc-row[data-date]').forEach(function(row){
+            var t = new Date(row.getAttribute('data-date')).getTime();
+            if(!isNaN(t) && t > latestDocTime){
+                latestDocTime = t;
+                latestDocRow = row;
+            }
+        });
+
+        if(!latestPost && !latestDocRow){
+            tagEl.textContent = 'Latest';
+            headlineEl.textContent = 'Check back soon.';
+            snippetEl.textContent = '';
+            return;
+        }
+
+        if(postTime >= latestDocTime){
+            tagEl.textContent = 'Latest update' + (latestPost.date ? ' — ' + latestPost.date : '');
+            headlineEl.textContent = latestPost.headline;
+            snippetEl.textContent = firstSentence(latestPost.body);
+            box.href = '#news';
+            box.onclick = function(){ showPage('news'); };
+        } else {
+            var titleEl = latestDocRow.querySelector('.doc-title');
+            var niceDate = formatDate(latestDocRow.getAttribute('data-date'));
+            tagEl.textContent = 'Latest document' + (niceDate ? ' — ' + niceDate : '');
+            headlineEl.textContent = titleEl ? titleEl.textContent : 'New document';
+            snippetEl.textContent = '';
+            box.href = '#documents';
+            box.onclick = function(){ showPage('documents'); };
+        }
+    }
+
+    // Show the latest known document immediately; this gets replaced by
+    // updateLatestInfoBox(posts) once the news feed loads, if a post is newer.
+    updateLatestInfoBox([]);
 
     fetch(EXEC_URL)
         .then(function(res){
@@ -1461,6 +1663,7 @@
             renderNewsPage(posts);
             renderHomeTeaser(posts);
             renderBreakingBar(posts);
+            updateLatestInfoBox(posts);
         })
         .catch(function(err){
             console.error('Failed to load posts from Apps Script:', err);
