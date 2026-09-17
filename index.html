@@ -257,26 +257,31 @@
         }
 
         /* ---------- hero ---------- */
-        .hero{
-            position:relative; color:var(--white);
-            display:flex; align-items:flex-end;
-            min-height:78vh;
-            background:linear-gradient(180deg, rgba(29,42,56,.35) 0%, rgba(20,26,33,.55) 55%, rgba(15,19,24,.86) 100%), url('hero.jpg') center 62%/cover no-repeat;
+        .hero {
+            position: relative;
+            color: var(--white);
+            display: flex;
+            align-items: flex-end;
+            min-height: 78vh;
+            background: url('images/proposal-sunset.jpg') center 62%/cover no-repeat;
         }
-        .hero-inner{max-width:var(--max); margin:0 auto; padding:64px 28px 56px; width:100%;}
-        .eyebrow{
-            display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:.72rem;
-            letter-spacing:.1em; text-transform:uppercase; color:var(--gold);
-            border:1px solid rgba(217,164,65,.5); padding:5px 11px; border-radius:2px; margin-bottom:22px;
+        .hero-inner {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0px 28px 150px;
+            width: 100%;
         }
         .hero h1{
-            font-size:clamp(2.2rem, 5.4vw, 3.9rem); color:var(--white); max-width:15ch; font-weight:600;
+            font-size:clamp(2.2rem, 5.4vw, 3.9rem); color: #000; max-width:15ch; font-weight:600;
         }
         .hero .lede{
-            font-size:1.15rem; max-width:52ch; color:rgba(246,241,230,.92); margin:18px 0 30px;
+            font-size:1.6rem; max-width:52ch; color: #000; margin:18px 0 30px;
         }
         .hero-cta{display:flex; gap:14px; flex-wrap:wrap;}
 
+        .white-text {
+            color: #fff !important;
+        }
         /* ---------- generic sections ---------- */
         section{padding:76px 0;}
         .section-parchment2{background:var(--parchment-2);}
@@ -572,7 +577,7 @@
 <header class="site">
     <div class="nav-row">
         <a href="#home" class="brand" onclick="showPage('home')">
-            <span class="peg">VLT</span>
+            <span class="peg">VTP</span>
             <span class="name">Vulcan Transparency Project
         <small>Facts · Documents · Decisions · Accountability</small>
       </span>
@@ -614,9 +619,12 @@
     <section class="hero">
         <div class="hero-inner">
 
-            <h1>This is the wrong location for an AI data centre.</h1>
-            <p class="lede">A 2.4 gw hyperscale ai data centre has been proposed on agricultural land beside Travers Reservoir in the county of Vulcan. This is an Environmentally Significant Area, a critical irrigation resource, home to one of Alberta’s most respected children’s summer camp and the nearby community of Little Bow. </p>
-            <p class="lede"> We’re  the families that have lived in the area for more than 30 years and we're asking decision-makers to choose a different Site. Once this location is opened to industrial development there will be no going back.</p>
+            <h1>Where Will the Next Hyperscale Data Centre Go?</h1>
+            <p class="lede">A 2.4 gw hyperscale ai data centre has been proposed on agricultural land beside Travers Reservoir in the county of Vulcan. This is an Environmentally Significant Area, a critical irrigation resource, a provincial recreation area, a long respected children’s summer camp and the nearby community of Little Bow. </p>
+            <p style="font-size: 24px;"><strong>This is the wrong location for a heavy industrial development</strong></p>
+            <p class="lede white-text">
+                We’re the families that have lived in the area for more than 30 years and we're asking decision-makers to choose a different site. We want the right development, the right location and the right rules.
+            </p>
             <div class="hero-cta">
                 <a href="#action" class="btn btn-copper" onclick="showPage('action')">Take Action Now</a>
                 <a href="documents/AI Datacenter Tech Primer.pdf" class="btn btn-outline" onclick="showPage('proposal')">what is an AI data centre</a>
@@ -840,8 +848,8 @@
                     <div class="issue-body">
                         <p>Beyond water use, a facility of this scale raises broader ecological questions for the land and reservoir it would sit beside. We're asking what independent environmental assessment has been done on Travers Reservoir and the surrounding watershed, how the development would affect wildlife habitat and bird corridors in the area, and what safeguards are proposed for air quality, noise, and light pollution from a facility that would run continuously, day and night.</p>
                         <ul class="issue-links">
-                            <li><a href="#" target="_blank" rel="noopener">Alberta Utilities Commission — project filings</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">Independent environmental assessment status</a></li>
+                            <!--<li><a href="#" target="_blank" rel="noopener">Alberta Utilities Commission — project filings</a></li>-->
+
                         </ul>
                     </div>
                 </details>
@@ -850,15 +858,17 @@
                     <summary>Water<span class="plus">+</span></summary>
                     <div class="issue-body">
                         <p>Cooling a facility of this scale requires a large, continuous water supply. We're asking what source is proposed, how it interacts with irrigation allocations that are already fully committed in this district, and what independent assessment exists of the impact on Travers Reservoir, the surrounding watershed, and downstream users.</p>
+                        <p> How much water could the completed project ultimately require?</p>
+                        <p> How would that demand affect Travers Reservoir during drought conditions?</p>
                         <ul class="issue-links">
                             <li><a href="https://www.ssrid.com/" target="_blank" rel="noopener">South Saskatchewan River irrigation district</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">Local irrigation district — water allocation background</a></li>
+                            <!--<li><a href="#" target="_blank" rel="noopener">Local irrigation district — water allocation background</a></li>-->
                         </ul>
                     </div>
                 </details>
 
                 <details class="issue-item">
-                    <summary>Agricultural Land<span class="plus">+</span></summary>
+                    <summary>Agriculture<span class="plus">+</span></summary>
                     <div class="issue-body">
                         <p>
                             Agricultural production in Vulcan County is a top economic driver in Alberta, anchored by grain crops, oilseeds, and livestock operations. The local economy relies heavily on extensive dryland and irrigated farming, supported by regional water resources like the Bow River Irrigation District (BRID).
@@ -876,7 +886,7 @@
                             The County of Vulcan includes over 1.01 million improved acres operated by approximately 1,050 farms. Vulcan County ranks as the third-highest overall gross agricultural-producing municipality in Alberta, historically reporting hundreds of millions in gross farm receipts, according to Statistics Canada data.
                         </p>
                         <ul class="issue-links">
-                            <li><a href="#" target="_blank" rel="noopener">Provincial farmland loss data</a></li>
+                            <!--<li><a href="#" target="_blank" rel="noopener">Provincial farmland loss data</a></li>-->
                         </ul>
                     </div>
                 </details>
@@ -886,7 +896,8 @@
                     <div class="issue-body">
                         <p>A facility like this requires a large, continuous electrical supply. We're asking what new generation or transmission infrastructure would be needed, who pays for it, and how it fits within the province's broader grid planning.</p>
                         <ul class="issue-links">
-                            <li><a href="#" target="_blank" rel="noopener">Alberta Electric System Operator  planning documents</a></li>
+                            <!--<li><a href="#" target="_blank" rel="noopener">Alberta Electric System Operator  planning documents</a></li>
+                            <li><a href="#" target="_blank" rel="noopener">Alberta Utilities Commission — project filings</a></li>-->
                         </ul>
                     </div>
                 </details>
@@ -896,7 +907,7 @@
                     <div class="issue-body">
                         <p>We're tracking the approvals this project needs  provincial, municipal, and otherwise  and where each one stands. This includes county land-use bylaws, utility and environmental approvals, and any opportunities for public and landowner input at each stage.</p>
                         <ul class="issue-links">
-                            <li><a href="#documents" onclick="showPage('documents')">Our filings &amp; submissions</a></li>
+                            <!--<li><a href="#documents" onclick="showPage('documents')">Our filings &amp; submissions</a></li>-->
                             <li><a href="https://www.vulcancounty.ab.ca">County of Vulcan</a></li>
                         </ul>
                     </div>
@@ -910,7 +921,7 @@
                             industrial site.  Other concerns with this industrial development include noise, lighting, air, and
                             water pollution.</p>
                         <ul class="issue-links">
-                            <li><a href="#" target="_blank" rel="noopener">County emergency services planning</a></li>
+                            <!--<li><a href="#" target="_blank" rel="noopener">County emergency services planning</a></li>-->
                         </ul>
                     </div>
                 </details>
@@ -983,6 +994,7 @@
                         <div class="action-actions">
                             <a href="#" class="btn btn-copper">Submit a comment</a>
                             <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">See filing guidance</a>
+                            <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">Example letter</a>
                         </div>
                     </div>
                 </div>
@@ -992,22 +1004,26 @@
                     <div>
                         <h3>Send a letter to your MLA and county councillor</h3>
                         <p class="action-desc">Elected officials respond to volume. A short, personal letter  even five sentences  adds to the record they can't ignore. Use the template below as a starting point, then make it your own.</p>
-
-
+                        <div class="action-actions">
+                            <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">Email list</a>
+                            <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">Example letter</a>
+                        </div>
                     </div>
+
+
                 </div>
 
-                <div class="action-item">
+                <div class="action-item" style="border-bottom:none;">
                     <span class="action-num">03</span>
                     <div>
-                        <h3>Attend the next public meeting</h3>
-                        <p class="action-desc">No meeting is scheduled, waiting on the next steps from regulator</p>
+                        <h3>Volunteer your time or a skill</h3>
+                        <p class="action-desc">We need people to help with research, note taking at meetings, mailouts, and keeping this site current. If you've got an hour a month, it helps.</p>
                         <div class="action-actions">
-                            <!-- <a href="#" class="btn btn-copper">Add meeting to calendar</a>
-                            <a href="#news" class="btn btn-ink-outline" onclick="showPage('news')">Check meeting dates</a> -->
+                            <a href="#contact" class="btn btn-copper" onclick="showPage('contact')">Offer to help</a>
                         </div>
                     </div>
                 </div>
+
 
                 <div class="action-item">
                     <span class="action-num">04</span>
@@ -1028,6 +1044,7 @@
                         <div class="action-actions">
                             <!-- <a href="#donate" class="btn btn-copper" onclick="showPage('donate')">Donate →</a> -->
                         </div>
+                        <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">account TBD</a>
                     </div>
                 </div>
 
@@ -1040,16 +1057,6 @@
                     </div>
                 </div>
 
-                <div class="action-item" style="border-bottom:none;">
-                    <span class="action-num">07</span>
-                    <div>
-                        <h3>Volunteer your time or a skill</h3>
-                        <p class="action-desc">We need people to help with research, note taking at meetings, mailouts, and keeping this site current. If you've got an hour a month, it helps.</p>
-                        <div class="action-actions">
-                            <a href="#contact" class="btn btn-copper" onclick="showPage('contact')">Offer to help</a>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
