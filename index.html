@@ -147,6 +147,7 @@
             nav.tabs{flex-direction:column; flex-wrap:nowrap; white-space:normal; width:auto; margin:0; padding:8px 0;}
             nav.tabs button{text-align:left; width:100%; padding:14px 12px;}
             .burger{display:block;}
+            .nav-actions .nav-btn{display:none;}
         }
 
         /* ---------- buttons ---------- */
@@ -421,6 +422,7 @@
         .doc-info .doc-title{font-weight:600; margin-bottom:3px;}
         .doc-info .mono{color:var(--sage);}
         .doc-dl{white-space:nowrap;}
+        .doc-tags{display:flex; flex-wrap:wrap; gap:6px; flex-shrink:0; max-width:220px; justify-content:flex-end;}
         .doc-tag{
             font-family:'IBM Plex Mono',monospace; font-size:.68rem; font-weight:600;
             letter-spacing:.04em; text-transform:uppercase; color:var(--copper);
@@ -501,6 +503,8 @@
         }
         .btn-donate:hover{background:#c8952f;}
         .nav-actions{display:flex; align-items:center; gap:10px;}
+        .nav-actions .nav-btn{padding:9px 16px; font-size:.82rem; white-space:nowrap;}
+
 
         /* scope note */
         .scope-note{
@@ -599,6 +603,7 @@
         </div>
 
         <div class="nav-actions">
+            <a href="#action" class="btn btn-copper nav-btn" onclick="showPage('action')">Donate</a>
             <!-- <a href="#donate" class="btn btn-donate" onclick="showPage('donate')">Donate</a> -->
             <button class="burger" id="burgerBtn" aria-label="Open menu">☰</button>
         </div>
@@ -626,8 +631,7 @@
                 We’re the families that have lived in the area for more than 30 years and we're asking decision-makers to choose a different site. We want the right development, the right location and the right rules.
             </p>
             <div class="hero-cta">
-                <a href="#action" class="btn btn-copper" onclick="showPage('action')">Take Action Now</a>
-                <a href="documents/AI Datacenter Tech Primer.pdf" class="btn btn-outline" onclick="showPage('proposal')">what is an AI data centre</a>
+                <a href="documents/AI Datacenter Tech Primer.pdf" class="btn btn-outline" onclick="showPage('proposal')">What is an AI data centre</a>
             </div>
         </div>
     </section>
@@ -797,28 +801,21 @@
         <div class="wrap">
             <span class="kicker">Know the facts</span>
             <h2 class="h-lg">The Proposal</h2>
-            <p class="lead-p">Here's what has been filed, what it would mean for the land around Travers Reservoir/Little Bow, and where the process stands today. We update this page as new filings become public  always with a source.</p>
 
-            <div class="grid-2" style="margin-top:44px; align-items:start;">
-                <div>
-                    <h3>What's being proposed</h3>
-                    <p>The proposal is to build a 2.4 GW AI data centre campus on agricultural land adjoining Travers Reservoir. A project of this kind requires a substantial, continuous electrical power supply and significant water for cooling, along with new supporting infrastructure.</p>
-                    <p>The proponent's application states the project would bring investment and jobs to the region. Community members have asked for clearer evidence on water sourcing and allocation, power infrastructure requirements, the amount of productive farmland that would be taken out of production, and the long-term economic case  We are tracking these concerns, more in the depth questions are raised on the <a href="#issues" onclick="showPage('issues')">Issues</a> page.</p>
-                    <h3 style="margin-top:36px;">Community concerns raised so far</h3>
-                    <ul style="padding-left:20px; color:#3c4650;">
-                        <li style="margin-bottom:10px;">Loss of some of Alberta's most productive farmland to heavy industrial development.</li>
-                        <li style="margin-bottom:10px;">Water demand for cooling competing with an irrigation allocation that is already fully committed.</li>
-                        <li style="margin-bottom:10px;">New high-capacity power infrastructure and generation needed to serve the facility.</li>
-                        <li style="margin-bottom:10px;">Emergency egress with single road access for the community.</li>
-                        <li style="margin-bottom:10px;">Noise, light, and 24/7 operations next to a rural residential and recreational area.</li>
-                        <li style="margin-bottom:10px;">Limited detail so far on independent water and environmental impact assessments.</li>
-                        <li>Questions about long-term local economic benefit relative to the footprint and resources required.</li>
-                    </ul>
+            <div class="grid-2" style="margin-top:24px; align-items:start;">
+                <div class="lead-p">
+                    <p>A 2.4 gw hyperscale ai data centre has been proposed on agricultural land beside Travers Reservoir in the county of Vulcan. This is an Environmentally Significant Area, a critical irrigation resource, a provincial recreation area, a long respected children’s summer camp and the nearby community of Little Bow.</p>
+                    <p>A project of this kind requires a substantial, continuous electrical power supply and significant water for cooling, along with new supporting infrastructure.</p>
+                    <p>The proponent's application states the project would bring investment and jobs to the region. Community members have asked for clearer evidence on water sourcing and allocation, power infrastructure requirements, the amount of productive farmland that would be taken out of production, and the long-term economic case.  We are tracking these concerns, more in the depth questions are raised on the <a href="#issues" onclick="showPage('issues')">Issues</a> page.</p>
+                    <a href="documents/Data centre proposal.pdf" target="_blank" rel="noopener">
+                        <span class="mono" style="display:block; margin-top:10px; color:var(--sage);">See the application.</span>
+                    </a>
                 </div>
 
                 <div>
-                    <img src="images/proposal-sunset.jpg" alt="Sunset over Travers Reservoir, near the proposed data centre site" style="border-radius:4px;">
-                    <span class="mono" style="display:block; margin-top:10px; color:var(--sage);">Travers Reservoir</span>
+                    <img src="images/image0.png" alt="Sunset over Travers Reservoir, near the proposed data centre site" style="border-radius:4px;">
+                    <span class="mono" style="display:block; margin-top:10px; color:var(--sage);">Travers Reservoir: development site in yellow</span>
+
                 </div>
 
             </div>
@@ -903,13 +900,50 @@
                 </details>
 
                 <details class="issue-item">
-                    <summary>Legal &amp; Regulatory<span class="plus">+</span></summary>
+                    <summary>Legal<span class="plus">+</span></summary>
                     <div class="issue-body">
-                        <p>We're tracking the approvals this project needs  provincial, municipal, and otherwise  and where each one stands. This includes county land-use bylaws, utility and environmental approvals, and any opportunities for public and landowner input at each stage.</p>
+                        <p> ﻿ “When the public process fails, the courts exist to ensure that governments follow the law”
+                        </p>
+                        <p>The residents of Little Bow have begun legal action in two specific areas as shown below.  These process and issues are still unfolding and we will update as we are able.</p>
+                        <p>
+                            1.   Residents have filed an application with the Alberta Court of King's Bench seeking judicial review of Vulcan County Council's decision to redesignate approximately 595 acres of land from Rural General to Rural Industrial under Bylaw 2026-007 to facilitate the proposed Palliser Grid AI Data Centre Campus – one of the largest AI Data Centre developments contemplated in the county.
+
+                            The respondents have been served with the originating notice (make the words ON link to the document in the docs folder).
+
+                        </p>
+                        <p>2.  Under Alberta’s Access to Information Act (ATIA) we have submitted requests to the County of Vulcan and the Old Man River Regional Services Commission (ORRSC) asking they provide copies of all verbal and written communications regarding the re-zoning application and subsequent approval.    We are asking for clarity around the decisions made and the processes applied.
+
+                            We have received responses from both agencies and in the process of sorting out the disclosure and determining whether to appeal.  </p>
                         <ul class="issue-links">
                             <!--<li><a href="#documents" onclick="showPage('documents')">Our filings &amp; submissions</a></li>-->
-                            <li><a href="https://www.vulcancounty.ab.ca">County of Vulcan</a></li>
+                            <!--<li><a href="https://www.vulcancounty.ab.ca">County of Vulcan</a></li>-->
                         </ul>
+                    </div>
+                </details>
+
+                <details class="issue-item">
+                    <summary>regulatory<span class="plus">+</span></summary>
+                    <div class="issue-body">
+                        <h3 style="margin-top:28px; font-size:1.15rem;">Does Alberta have the appropriate regulatory framework for projects of this unprecedented scale?</h3>
+                        <p>Currently municipalities across Alberta are making decisions in isolation — one project at a time. We are concerned that many rural municipalities may not have the specialized expertise or resources necessary to adequately evaluate the full range of issues associated with large-scale AI data centres, and that fiscal considerations could disproportionately influence local decision-making.</p>
+                        <p>See our <a href="documents/Open Letter to Danielle Smith August 20th, 2026.pdf" target="_blank" rel="noopener">letter to the Premier</a>, where we asked for regulatory policies that include:</p>
+                        <ol style="padding-left:20px; color:#3c4650;">
+                            <li style="margin-bottom:10px;">Mandatory Development Criteria</li>
+                            <li style="margin-bottom:10px;">Take the Right Place, Right Rules Approach</li>
+                            <li style="margin-bottom:10px;">Complete Applications — No Missing Information Allowed</li>
+                            <li style="margin-bottom:10px;">Minimum Qualification Thresholds to Prevent Speculative Applications</li>
+                            <li style="margin-bottom:10px;">Protect Water and Our Agricultural Resources</li>
+                            <li style="margin-bottom:10px;">Clarify Water Use</li>
+                            <li style="margin-bottom:10px;">Specific Noise Standards</li>
+                            <li style="margin-bottom:10px;">Comprehensive Fire and Emergency Planning</li>
+                            <li style="margin-bottom:10px;">Meaningful Public Consultation</li>
+                            <li style="margin-bottom:10px;">Require Cumulative-Effects Assessments</li>
+                            <li style="margin-bottom:10px;">Prevent Municipalities from Competing with One Another</li>
+                            <li style="margin-bottom:10px;">Who Should Regulate Data Centres</li>
+                            <li style="margin-bottom:10px;">Create a Single, Transparent Provincial Registry</li>
+                            <li style="margin-bottom:10px;">Financial Security for Decommissioning and Reclamation</li>
+                            <li>Municipal Accountability and an Accessible Appeal Process</li>
+                        </ol>
                     </div>
                 </details>
 
@@ -989,19 +1023,6 @@
                 <div class="action-item">
                     <span class="action-num">01</span>
                     <div>
-                        <h3>Submit a formal comment to the regulator</h3>
-                        <p class="action-desc">Written submissions to the Alberta Utilities Commission and Vulcan County become part of the official record and carry the most procedural weight. Comments are strongest when they're specific  cite the facts, the concern, and what you're asking for.</p>
-                        <div class="action-actions">
-                            <a href="#" class="btn btn-copper">Submit a comment</a>
-                            <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">See filing guidance</a>
-                            <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">Example letter</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="action-item">
-                    <span class="action-num">02</span>
-                    <div>
                         <h3>Send a letter to your MLA and county councillor</h3>
                         <p class="action-desc">Elected officials respond to volume. A short, personal letter  even five sentences  adds to the record they can't ignore. Use the template below as a starting point, then make it your own.</p>
                         <div class="action-actions">
@@ -1012,6 +1033,19 @@
 
 
                 </div>
+
+                <div class="action-item">
+                    <span class="action-num">02</span>
+                    <div>
+                        <h3>Donate to support the committee's work</h3>
+                        <p class="action-desc">Independent research, technical review, and materials all take resources. Every dollar goes directly toward keeping this record public and accurate.</p>
+                        <div class="action-actions">
+                            <!-- <a href="#donate" class="btn btn-copper" onclick="showPage('donate')">Donate →</a> -->
+                        </div>
+                        <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">account TBD</a>
+                    </div>
+                </div>
+
 
                 <div class="action-item" style="border-bottom:none;">
                     <span class="action-num">03</span>
@@ -1028,6 +1062,21 @@
                 <div class="action-item">
                     <span class="action-num">04</span>
                     <div>
+                        <h3>Submit a formal comment to the regulator</h3>
+                        <p class="action-desc">Written submissions to the Alberta Utilities Commission and Vulcan County become part of the official record and carry the most procedural weight. Comments are strongest when they're specific  cite the facts, the concern, and what you're asking for.</p>
+                        <P> Watch here for more information to file.</P>
+                        <div class="action-actions">
+                            <!--<a href="#" class="btn btn-copper">Submit a comment</a>-->
+                            <!--<a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">See filing guidance</a>-->
+                            <!--<a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">Example letter</a>-->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="action-item">
+                    <span class="action-num">05</span>
+                    <div>
                         <h3>Sign on as a supporter</h3>
                         <p class="action-desc">Join the community registry. It shows the regulator and elected officials the scale of concern, and it puts you on the list for meeting notices and deadline reminders.</p>
                         <div class="action-actions">
@@ -1036,17 +1085,7 @@
                     </div>
                 </div>
 
-                <div class="action-item">
-                    <span class="action-num">05</span>
-                    <div>
-                        <h3>Donate to support the committee's work</h3>
-                        <p class="action-desc">Independent research, technical review, and materials all take resources. Every dollar goes directly toward keeping this record public and accurate.</p>
-                        <div class="action-actions">
-                            <!-- <a href="#donate" class="btn btn-copper" onclick="showPage('donate')">Donate →</a> -->
-                        </div>
-                        <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">account TBD</a>
-                    </div>
-                </div>
+
 
                 <div class="action-item">
                     <span class="action-num">06</span>
@@ -1079,30 +1118,36 @@
                     <input type="text" id="docSearchInput" placeholder="Search documents…" aria-label="Search documents">
                 </div>
                 <div class="doc-filters" id="docFilters">
-                    <button type="button" class="doc-filter-btn active" data-category="all">All</button>
+                    <button type="button" class="doc-filter-btn active" data-categories="all">All</button>
                 </div>
             </div>
 
             <div style="margin-top:24px;" id="docList">
-                <div class="doc-row" data-category="Government" data-date="2026-08-20">
+                <div class="doc-row" data-categories="Regulatory,Government" data-date="2026-08-20">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Open Letter to Danielle Smith August 20th, 2026</div>
                         <span class="mono">Filed  see date</span>
                     </div>
-                    <span class="doc-tag">Government</span>
+                    <div class="doc-tags">
+                        <span class="doc-tag">Regulatory</span>
+                        <span class="doc-tag">Government</span>
+                    </div>
                     <a href="documents/Open Letter to Danielle Smith August 20th, 2026" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row" data-category="Regulatory" data-date="2026-05-19">
+                <div class="doc-row" data-categories="Safety,Government" data-date="2026-05-19">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">2026-05-19 Response to Access to Information Request - Fire Report - Travers Solar</div>
                         <span class="mono">Filed  see date</span>
                     </div>
-                    <span class="doc-tag">Regulatory</span>
+                    <div class="doc-tags">
+                        <span class="doc-tag">Safety</span>
+                        <span class="doc-tag">Government</span>
+                    </div>
                     <a href="documents/2026-05-19 Response to Access to Information Request - Document Package.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row" data-category="Environment" data-date="2025-06-14">
+                <div class="doc-row" data-categories="Environment" data-date="2025-06-14">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Cumulative Effects Review - Dr. Brad Stelfox Assessment of Beacon CER  June 14, 2025</div>
@@ -1111,7 +1156,7 @@
                     <span class="doc-tag">Environment</span>
                     <a href="documents/30524_X0359_Dr Brad Stelfox Assessment of Beacon CER June 14, 2025_000389.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row" data-category="Technical">
+                <div class="doc-row" data-categories="Technical">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">AI Datacenter Tech Primer</div>
@@ -1120,17 +1165,20 @@
                     <span class="doc-tag">Technical</span>
                     <a href="documents/AI Datacenter Tech Primer.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row" data-category="Legal">
+                <div class="doc-row" data-categories="Legal,Environment">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 1985-006  McGregor, Travers  Little Bow Area Structure Maps</div>
                         <span class="mono">Filed  see date</span>
                     </div>
-                    <span class="doc-tag">Legal</span>
+                    <div class="doc-tags">
+                        <span class="doc-tag">Legal</span>
+                        <span class="doc-tag">Environment</span>
+                    </div>
                     <a href="documents/Bylaw 1985-006 McGregor, Travers Little Bow Area Structure MAPS.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
 
-                <div class="doc-row" data-category="Legal">
+                <div class="doc-row" data-categories="Legal">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 2026-007  Schedule 'A' Final</div>
@@ -1139,7 +1187,7 @@
                     <span class="doc-tag">Legal</span>
                     <a href="documents/Bylaw 2026-007 Schedule 'A' Final.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row" data-category="Legal">
+                <div class="doc-row" data-categories="Legal">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 2026-007  Timeline</div>
@@ -1148,7 +1196,7 @@
                     <span class="doc-tag">Legal</span>
                     <a href="documents/Bylaw 2026-007 Timeline.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row" data-category="Proponent">
+                <div class="doc-row" data-categories="Proponent">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 2026-007 - Initial Data Centre Proposal</div>
@@ -1158,7 +1206,7 @@
                     <a href="documents/Data centre proposal.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
 
-                <div class="doc-row" data-category="Legal">
+                <div class="doc-row" data-categories="Legal">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Brief of Argument -  Ronald Girvitz  April 28, 2026</div>
@@ -1167,7 +1215,7 @@
                     <span class="doc-tag">Legal</span>
                     <a href="documents/Submissions.Ronald Girvitz.Apr 28.26.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row" data-category="Legal">
+                <div class="doc-row" data-categories="Legal">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Vulcan County Objection  Bylaw 2026-007  Request for New Hearing</div>
@@ -1177,7 +1225,7 @@
                     <a href="documents/Vulcan County Objection - Bylaw 2026-007 - Request for New Hearing.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
 
-                <div class="doc-row" data-category="Community">
+                <div class="doc-row" data-categories="Community">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 2026-007 Registrants Presentations</div>
@@ -1186,7 +1234,7 @@
                     <span class="doc-tag">Community</span>
                     <a href="documents/Attachment - Bylaw 2026-007 Registrants Presentations.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
-                <div class="doc-row" data-category="Community">
+                <div class="doc-row" data-categories="Community">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
                         <div class="doc-title">Bylaw 2026-007 Written Responses</div>
@@ -1270,7 +1318,7 @@
                     <hr class="rule" style="margin:16px 0;">
                     <dl>
                         <dt>Email</dt><dd><a href="mailto:littlebow.aidc@gmail.com">littlebow.aidc@gmail.com</a></dd>
-
+                        <dt>phone</dt>587-215-8644 or 403-466-9710</a></dd>
 
                         <dt>Social</dt><dd><a href="#">Facebook</a> </dd>
                     </dl>
@@ -1359,18 +1407,25 @@
         var emptyMsg = document.getElementById('docEmptyMsg');
         var activeCategory = 'all';
 
+        // Reads a row's one-or-more categories (comma-separated) into an array.
+        function rowCategories(row){
+            var raw = row.getAttribute('data-categories') || row.getAttribute('data-category') || '';
+            return raw.split(',').map(function(c){ return c.trim(); }).filter(Boolean);
+        }
+
         // Build filter pills from whatever categories are present on the rows
         var categories = [];
         rows.forEach(function(row){
-            var cat = row.getAttribute('data-category');
-            if(cat && categories.indexOf(cat) === -1) categories.push(cat);
+            rowCategories(row).forEach(function(cat){
+                if(categories.indexOf(cat) === -1) categories.push(cat);
+            });
         });
         categories.sort();
         categories.forEach(function(cat){
             var btn = document.createElement('button');
             btn.type = 'button';
             btn.className = 'doc-filter-btn';
-            btn.setAttribute('data-category', cat);
+            btn.setAttribute('data-categories', cat);
             btn.textContent = cat;
             filtersEl.appendChild(btn);
         });
@@ -1380,7 +1435,7 @@
             var visibleCount = 0;
             rows.forEach(function(row){
                 var title = (row.querySelector('.doc-title') ? row.querySelector('.doc-title').textContent : '').toLowerCase();
-                var matchesCategory = activeCategory === 'all' || row.getAttribute('data-category') === activeCategory;
+                var matchesCategory = activeCategory === 'all' || rowCategories(row).indexOf(activeCategory) !== -1;
                 var matchesSearch = !term || title.indexOf(term) !== -1;
                 var show = matchesCategory && matchesSearch;
                 row.classList.toggle('doc-hidden', !show);
@@ -1392,7 +1447,7 @@
         filtersEl.addEventListener('click', function(e){
             var btn = e.target.closest('.doc-filter-btn');
             if(!btn) return;
-            activeCategory = btn.getAttribute('data-category');
+            activeCategory = btn.getAttribute('data-categories');
             filtersEl.querySelectorAll('.doc-filter-btn').forEach(function(b){
                 b.classList.toggle('active', b === btn);
             });
