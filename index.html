@@ -150,6 +150,8 @@
             .nav-actions .nav-btn{display:none;}
         }
 
+
+
         /* ---------- buttons ---------- */
         .btn{
             display:inline-flex; align-items:center; gap:8px;
@@ -271,12 +273,20 @@
             margin: 0 auto;
             padding: 0px 28px 150px;
             width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-main{flex: 1 1 auto; min-width: 0;}
+        @media (max-width: 1000px){
+            .hero-inner{flex-direction: column; align-items: stretch;}
         }
         .hero h1{
-            font-size:clamp(2.2rem, 5.4vw, 3.9rem); color: #000; max-width:15ch; font-weight:600;
+            font-size:clamp(2.2rem, 5.4vw, 3.9rem); color: #000; max-width:20ch; font-weight:600;
         }
         .hero .lede{
-            font-size:1.6rem; max-width:52ch; color: #000; margin:18px 0 30px;
+            font-size:1.6rem; max-width:80ch; color: #000; margin:18px 0 30px;
         }
         .hero-cta{display:flex; gap:14px; flex-wrap:wrap;}
 
@@ -346,7 +356,7 @@
         }
         .section-dusk .timeline{border-left-color:var(--line-dark);}
         .section-dusk .timeline .tl-item::before{border-color:var(--dusk);}
-        .tl-date{font-family:'IBM Plex Mono',monospace; font-size:.75rem; color:var(--copper); text-transform:uppercase; letter-spacing:.06em; display:block; margin-bottom:4px;}
+        .tl-date{font-family:'IBM Plex Mono',monospace; font-size:.75rem; color:var(--copper); text-transform:none; letter-spacing:.06em; display:block; margin-bottom:4px;}
         .section-dusk .tl-date{color:var(--gold);}
 
         /* take action */
@@ -623,16 +633,15 @@
 <main id="page-home" class="page active">
     <section class="hero">
         <div class="hero-inner">
+          <div class="hero-main">
 
             <h1>Where Will the Next Hyperscale Data Centre Go?</h1>
             <p class="lede">A 2.4 gw hyperscale ai data centre has been proposed on agricultural land beside Travers Reservoir in the county of Vulcan. This is an Environmentally Significant Area, a critical irrigation resource, a provincial recreation area, a long respected children’s summer camp and the nearby community of Little Bow. </p>
-            <p style="font-size: 24px;"><strong>This Is The Wrong Location For A Heavy Industrial Development</strong></p>
-            <p class="lede white-text">
-                We’re the families that have lived in the area for more than 30 years and we're asking decision-makers to choose a different site. We want the right development, the right location and the right rules.
-            </p>
+            <p style="font-size: 40px;"><strong>This Is The Wrong Location For Heavy Industrial Development</strong></p>
             <div class="hero-cta">
                 <a href="documents/AI Datacenter Tech Primer.pdf" class="btn btn-outline" onclick="showPage('proposal')">What is an AI data centre</a>
             </div>
+          </div>
         </div>
     </section>
 
@@ -672,6 +681,7 @@
             <p class="lead-p">"The Vulcan Transparency Project is a collaborative, volunteer-led group formed to provide an informed and balanced review of the proposed large-scale AI data centre development in Vulcan County."</p>
             <p class="lead-p">The Committee brings together individuals with extensive professional experience across a broad range of disciplines, including engineering, land and resource development, regulatory affairs, government, environmental and land-use matters, corporate and business leadership, communications and media, and law.</p>
             <p class="lead-p">This diverse expertise allows the Committee to assess the proposal from multiple perspectives including land-use planning, infrastructure, environmental impacts, public safety, regulatory compliance, economic development, and procedural fairness.</p>
+            <p class="lead-p">We are also the families that have lived in the area for more than 30 years. We are not asking for special treatment; we're asking decision makers to follow the rules already in place. Protect this agricultural and recreational landscape and reconize that this is the wrong location for industrial development of this scale.</p>
             <hr class="rule">
 
         </div>
@@ -693,7 +703,7 @@
         <div class="wrap">
             <span class="kicker">Stay informed</span>
             <h2 class="h-lg">Updates</h2>
-            <p class="lead-p">Committee updates, regulatory milestones, community meetings, and media coverage of the proposed AI data centre, posted as they happen.</p>
+            <p class="lead-p">Committee updates, regulatory milestones, community meetings, and media coverage of the proposed AI data centre will be posted as they happen.</p>
             <hr class="rule">
             <div class="grid-2" id="newsGridAll">
                 <p class="mono" style="color:var(--sage);">Loading posts…</p>
@@ -787,7 +797,7 @@
                 <div class="lead-p">
                     <p>A 2.4 gw hyperscale ai data centre has been proposed on agricultural land beside Travers Reservoir in the county of Vulcan. This is an Environmentally Significant Area, a critical irrigation resource, a provincial recreation area, a long respected children’s summer camp and the nearby community of Little Bow.</p>
                     <p>A project of this kind requires a substantial, continuous electrical power supply and significant water for cooling, along with new supporting infrastructure.</p>
-                    <p>The proponent's application states the project would bring investment and jobs to the region. Community members have asked for clearer evidence on water sourcing and allocation, power infrastructure requirements, the amount of productive farmland that would be taken out of production, and the long-term economic case.  We are tracking these concerns, more in the depth questions are raised on the <a href="#issues" onclick="showPage('issues')">Issues</a> page.</p>
+                    <p>The proponent's application states the project would bring investment and jobs to the region. Community members have asked for clearer evidence on water sourcing and allocation, power infrastructure requirements, the amount of productive farmland that would be taken out of production, and the long-term economic case.  We are tracking these concerns. More in-depth questions are raised on the <a href="#issues" onclick="showPage('issues')">Issues</a> page.</p>
                     <a href="documents/Data centre proposal.pdf" target="_blank" rel="noopener">
                         <span class="mono" style="display:block; margin-top:10px; color:var(--sage);">See the application.</span>
                     </a>
@@ -833,9 +843,9 @@
                 <details class="issue-item">
                     <summary>Water<span class="plus">+</span></summary>
                     <div class="issue-body">
-                        <p>Cooling a facility of this scale requires a large, continuous water supply. We're asking what source is proposed, how it interacts with irrigation allocations that are already fully committed in this district, and what independent assessment exists of the impact on Travers Reservoir, the surrounding watershed, and downstream users.</p>
+                        <p>Cooling a facility of this scale requires a large, continuous water supply. We're asking what source is proposed, how it interacts with irrigation allocations that are already fully committed in this district, and what independent assessment exists showing the impact on Travers Reservoir, the surrounding watershed, and downstream users.</p>
                         <p> How much water could the completed project ultimately require?</p>
-                        <p> How would that demand affect Travers Reservoir during drought conditions?</p>
+                        <p> How would that demand affect Travers Reservoir and farmers during drought conditions?</p>
                         <ul class="issue-links">
                             <li><a href="https://www.ssrid.com/" target="_blank" rel="noopener">South Saskatchewan River irrigation district</a></li>
                             <!--<li><a href="#" target="_blank" rel="noopener">Local irrigation district — water allocation background</a></li>-->
@@ -855,7 +865,7 @@
                         </p>
 
                         <p>
-                            Water is initially diverted from the Bow River at the Carseland Weir, moves via the main canal into Lake McGregor, through a connecting canal into Travers Reservoir and the Little Bow Reservoir. This system provides irrigation to over 290,000 acres of farmland.
+                            Water is initially diverted from the Bow River at the Carseland Weir, moves via the main canal into Lake McGregor, then through a connecting canal into Travers Reservoir and the Little Bow Reservoir. This system provides irrigation to over 300,000 acres of farmland.
                         </p>
 
                         <p>
@@ -886,8 +896,14 @@
                         <p>The residents of Little Bow have begun legal action in two specific areas as shown below.  These process and issues are still unfolding and we will update as we are able.</p>
                         <p>
                             1.   Residents have filed an application with the Alberta Court of King's Bench seeking judicial review of Vulcan County Council's decision to redesignate approximately 595 acres of land from Rural General to Rural Industrial under Bylaw 2026-007 to facilitate the proposed Palliser Grid AI Data Centre Campus – one of the largest AI Data Centre developments contemplated in the county.
+                            The respondents have been served with the
+                            <a href="documents/Originating-Notice.pdf" target="_blank">
+                                Originating Notice
+                            </a>.
 
-                            The respondents have been served with the originating notice (make the words ON link to the document in the docs folder).
+
+                        </p>
+                        <p>
 
                         </p>
                         <p>2.  Under Alberta’s Access to Information Act (ATIA) we have submitted requests to the County of Vulcan and the Old Man River Regional Services Commission (ORRSC) asking they provide copies of all verbal and written communications regarding the re-zoning application and subsequent approval.    We are asking for clarity around the decisions made and the processes applied.
@@ -901,11 +917,11 @@
                 </details>
 
                 <details class="issue-item">
-                    <summary>regulatory<span class="plus">+</span></summary>
+                    <summary>Regulatory<span class="plus">+</span></summary>
                     <div class="issue-body">
                         <h3 style="margin-top:28px; font-size:1.15rem;">Does Alberta have the appropriate regulatory framework for projects of this unprecedented scale?</h3>
-                        <p>Currently municipalities across Alberta are making decisions in isolation — one project at a time. We are concerned that many rural municipalities may not have the specialized expertise or resources necessary to adequately evaluate the full range of issues associated with large-scale AI data centres, and that fiscal considerations could disproportionately influence local decision-making.</p>
-                        <p>See our <a href="documents/Open Letter to Danielle Smith August 20th, 2026.pdf" target="_blank" rel="noopener">letter to the Premier</a>, where we asked for regulatory policies that include:</p>
+                        <p>Currently municipalities across Alberta are making decisions in isolation — one project at a time. We are concerned that many rural municipalities may not have the specialized expertise or resources necessary to adequately evaluate the full range of issues associated with large-scale AI data centres, and that fiscal considerations could disproportionately influence local decision making.</p>
+                        <p>See our <a href="documents/Open Letter to Danielle Smith August 31st, 2026.pdf" target="_blank" rel="noopener">Letter to the Premier</a>, where we asked for regulatory policies that include:</p>
                         <ol style="padding-left:20px; color:#3c4650;">
                             <li style="margin-bottom:10px;">Mandatory Development Criteria</li>
                             <li style="margin-bottom:10px;">Take the Right Place, Right Rules Approach</li>
@@ -977,12 +993,12 @@
                 <div class="tl-item">
                     <span class="tl-date">1990</span>
                     <h4 style="margin-bottom:4px;">Little Bow community founded</h4>
-                    <p style="color:#3c4650;">In 1990, the first houses were built in the nearby community of Little Bow, which now includes 250 homes.</p>
+                    <p style="color:#3c4650;">In 1990, the first houses were built in the nearby community of Little Bow, which now includes 250 properties.</p>
                 </div>
                 <div class="tl-item">
                     <span class="tl-date">June 2026</span>
                     <h4 style="margin-bottom:4px;">Farmland rezoned for industrial use</h4>
-                    <p style="color:#3c4650;">In June of 2026, Vulcan County Council rezoned approximately 595 acres of farm land to industrial use, making way for one of the largest AI Data Centre developments contemplated in the province. The proposed development, a 2.4 GW AI Data Centre, would be located adjacent to the Travers Reservoir in Vulcan County.</p>
+                    <p style="color:#3c4650;">In June of 2026, Vulcan County Council rezoned approximately 595 acres of farm land to industrial use, making way for a 2.4 GW Data Centre, one of the largest contemplated in the province.</p>
                 </div>
             </div>
         </div>
@@ -995,7 +1011,7 @@
         <div class="wrap">
             <span class="kicker">Get involved</span>
             <h2 class="h-lg">Take Action</h2>
-            <p class="lead-p">The decisions on this proposal are still being made  which means there's still time to shape them. If you're a resident of Vulcan County, your voice carries particular weight. Here's what you can do</p>
+            <p class="lead-p">The decisions on this proposal are still being made  which means there's still time to shape them. If you're a resident of Vulcan County, your voice carries particular weight. Here's what you can do. Elected officials respond to volume. A short, personal letter (even five sentences) adds to the record they can't ignore. Use the template below as a starting point, then make it your own.</p>
 
             <div class="action-list" style="margin-top:40px;">
 
@@ -1003,10 +1019,14 @@
                     <span class="action-num">01</span>
                     <div>
                         <h3>Send a letter to your MLA and county councillor</h3>
-                        <p class="action-desc">Elected officials respond to volume. A short, personal letter  even five sentences  adds to the record they can't ignore. Use the template below as a starting point, then make it your own.</p>
+                        <p class="action-desc">Elected officials respond to volume. A short, personal letter even five sentences adds to the record they can't ignore. Use the template below as a starting point, then make it your own.</p>
                         <div class="action-actions">
                             <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">Email list</a>
-                            <a href="#documents" class="btn btn-ink-outline" onclick="showPage('documents')">Example letter</a>
+                            <a href="documents/example letter to MLA.pdf"
+                               class="btn btn-ink-outline"
+                               target="_blank">
+                                Example Letter
+                            </a>
                         </div>
                     </div>
 
@@ -1042,7 +1062,7 @@
                     <span class="action-num">04</span>
                     <div>
                         <h3>Submit a formal comment to the regulator</h3>
-                        <p class="action-desc">Written submissions to the Alberta Utilities Commission and Vulcan County become part of the official record and carry the most procedural weight. Comments are strongest when they're specific  cite the facts, the concern, and what you're asking for.</p>
+                        <p class="action-desc">Written submissions to the Alberta Utilities Commission and Vulcan County become part of the official record and carry the most procedural weight. Comments are strongest when they're specific, cite the facts, the concern, and what you're asking for.</p>
                         <P> Watch here for more information to file.</P>
                         <div class="action-actions">
                             <!--<a href="#" class="btn btn-copper">Submit a comment</a>-->
@@ -1070,7 +1090,7 @@
                     <span class="action-num">06</span>
                     <div>
                         <h3>Share this with someone the proposal affects</h3>
-                        <p class="action-desc">The proposal moves fast; word of mouth is still how most of Little Bow finds out what's happening. Share this site with a neighbour, a family member, or your grazing co-op.</p>
+                        <p class="action-desc">The proposal moves fast. Word of mouth is still how most of Little Bow finds out what's happening. Share this site with a neighbour, a family member, or your grazing co-op.</p>
 
                     </div>
                 </div>
@@ -1101,18 +1121,34 @@
                 </div>
             </div>
 
+
+
+
             <div style="margin-top:24px;" id="docList">
-                <div class="doc-row" data-categories="Regulatory,Government" data-date="2026-08-20">
+                <div class="doc-row" data-categories="Legal" data-date="2026-08-20">
                     <div class="doc-icon">PDF</div>
                     <div class="doc-info">
-                        <div class="doc-title">Open Letter to Danielle Smith August 20th, 2026</div>
+                        <div class="doc-title">Originating Notice Re Judicial Review June, 2026</div>
+                        <span class="mono">Filed  see date</span>
+                    </div>
+                    <div class="doc-tags">
+                        <span class="doc-tag">Legal</span>
+
+                    </div>
+                    <a href="documents/1. Originating Application (filed July 22 2026).pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
+                </div>
+
+                <div class="doc-row" data-categories="Regulatory,Government" data-date="2026-08-31">
+                    <div class="doc-icon">PDF</div>
+                    <div class="doc-info">
+                        <div class="doc-title">Open Letter to Danielle Smith August 31th, 2026</div>
                         <span class="mono">Filed  see date</span>
                     </div>
                     <div class="doc-tags">
                         <span class="doc-tag">Regulatory</span>
                         <span class="doc-tag">Government</span>
                     </div>
-                    <a href="documents/Open Letter to Danielle Smith August 20th, 2026" class="btn btn-ink-outline doc-dl" download>Download</a>
+                    <a href="documents/Open Letter to Danielle Smith August 31st, 2026.pdf" class="btn btn-ink-outline doc-dl" download>Download</a>
                 </div>
                 <div class="doc-row" data-categories="Safety,Government" data-date="2026-05-19">
                     <div class="doc-icon">PDF</div>
@@ -1517,6 +1553,13 @@
             var d = new Date(parseInt(m[1],10), parseInt(m[2],10), parseInt(m[3],10));
             return d.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
         }
+        // Plain YYYY-MM-DD dates are read as local dates (new Date() would treat them
+        // as UTC midnight, which shows up as the previous day in Alberta).
+        var iso = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(raw).trim());
+        if(iso){
+            var d3 = new Date(parseInt(iso[1],10), parseInt(iso[2],10)-1, parseInt(iso[3],10));
+            return d3.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+        }
         var d2 = new Date(raw);
         if(!isNaN(d2.getTime())) return d2.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
         return String(raw);
@@ -1525,6 +1568,8 @@
     function dateSortValue(raw){
         var m = /^Date\((\d+),(\d+),(\d+)/.exec(raw || '');
         if(m) return new Date(parseInt(m[1],10), parseInt(m[2],10), parseInt(m[3],10)).getTime();
+        var iso = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(raw || '').trim());
+        if(iso) return new Date(parseInt(iso[1],10), parseInt(iso[2],10)-1, parseInt(iso[3],10)).getTime();
         var d = new Date(raw);
         return isNaN(d.getTime()) ? 0 : d.getTime();
     }
@@ -1655,8 +1700,8 @@
 
         var latestDocRow = null, latestDocTime = -Infinity;
         document.querySelectorAll('#docList .doc-row[data-date]').forEach(function(row){
-            var t = new Date(row.getAttribute('data-date')).getTime();
-            if(!isNaN(t) && t > latestDocTime){
+            var t = dateSortValue(row.getAttribute('data-date'));
+            if(t && t > latestDocTime){
                 latestDocTime = t;
                 latestDocRow = row;
             }
