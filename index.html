@@ -1389,9 +1389,7 @@
         btn.addEventListener('click', () => showPage(btn.dataset.page));
     });
 
-    document.getElementById('burgerBtn').addEventListener('click', () => {
-        document.getElementById('tabsNav').classList.toggle('open');
-    });
+    
 
     function copyShareLink(){
         navigator.clipboard && navigator.clipboard.writeText(window.location.href.split('#')[0]);
