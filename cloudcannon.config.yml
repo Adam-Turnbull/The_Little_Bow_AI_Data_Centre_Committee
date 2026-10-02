@@ -1,11 +1,7 @@
-paths:
-  static: ''
-  uploads: uploads
-timezone: America/Denver
-markdown:
-  engine: commonmark
-  options: {}
+yaml
 collections_config:
   pages:
     path: ''
+    output: true
+    url: "/[relative_base_path]"
     icon: wysiwyg
