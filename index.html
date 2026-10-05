@@ -1368,18 +1368,18 @@
             <div class="grid-2" style="align-items:start; margin-top:20px;">
                 <div>
                     <p class="lead-p" data-editable="source" data-path="/index.html" data-key="text-89">Questions about the proposal, tips on new filings, or want to volunteer? We want to hear from you.</p>
-                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks  this is a demo form. Connect it to your email service or form backend to go live.');">
+                    <form class="contact-form" id="contactForm" novalidate>
                         <div>
                             <label for="name">Name</label>
-                            <input id="name" type="text" required>
+                            <input id="name" name="name" type="text" required maxlength="100" autocomplete="name">
                         </div>
                         <div>
                             <label for="email">Email</label>
-                            <input id="email" type="email" required>
+                            <input id="email" name="email" type="email" required maxlength="150" autocomplete="email">
                         </div>
                         <div>
                             <label for="topic">I'm writing about</label>
-                            <select id="topic">
+                            <select id="topic" name="topic">
                                 <option>General question</option>
                                 <option>The AI data centre proposal</option>
                                 <option>Volunteering</option>
@@ -1389,9 +1389,13 @@
                         </div>
                         <div>
                             <label for="message">Message</label>
-                            <textarea id="message" required></textarea>
+                            <textarea id="message" name="message" required maxlength="5000"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-copper" style="justify-self:start;">Send message</button>
+                        <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" aria-hidden="true">
+                            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" aria-label="Do not fill in">
+                        </div>
+                        <button type="submit" id="contactSubmit" class="btn btn-copper" style="justify-self:start;">Send message</button>
+                        <p id="contactStatus" class="mono" role="status" aria-live="polite" style="display:none; margin:0; text-transform:none; font-size:.85rem; letter-spacing:.02em;"></p>
                     </form>
                 </div>
                 <div class="facts">
@@ -1556,7 +1560,7 @@
     // Data comes from an Apps Script Web App deployment ("Execute as: Me",
     // "Who has access: Anyone") whose doGet(e) reads the "Posts" tab and
     // returns JSON.
-    var EXEC_URL = 'https://script.google.com/macros/s/AKfycbw-TP9qoKn9ULLhOLszILWAefs1M4PS8bX_72srzSwVX7g7NZB-lHuKxea1X-J9KQOPMw/exec';
+    var EXEC_URL = 'https://script.google.com/macros/s/AKfycbzfaHJsITc1MWGu4K5J2zzCy1ST5sc4ltHxB6wWJZ0O2hCIrPSva6gLuTIKC4BWD9GdAA/exec';
 
     function stripHtml(html){
         return String(html || '').replace(/<[^>]*>/g, '');
@@ -1832,5 +1836,77 @@
 })();
 </script>
 
+
+<!-- ============ CONTACT FORM (sends via Google Apps Script) ============ -->
+<script>
+(function(){
+    // Same Apps Script Web App as the news feed. It needs a doPost(e) that
+    // emails the message (see the doPost code provided with this site).
+    var CONTACT_URL = 'https://script.google.com/macros/s/AKfycbzfaHJsITc1MWGu4K5J2zzCy1ST5sc4ltHxB6wWJZ0O2hCIrPSva6gLuTIKC4BWD9GdAA/exec';
+    var FALLBACK_EMAIL = 'littlebow.aidc@gmail.com';
+
+    var form = document.getElementById('contactForm');
+    if(!form) return;
+    var btn = document.getElementById('contactSubmit');
+    var statusEl = document.getElementById('contactStatus');
+    var loadedAt = Date.now();
+
+    function setStatus(msg, color){
+        statusEl.textContent = msg;
+        statusEl.style.color = color;
+        statusEl.style.display = msg ? 'block' : 'none';
+    }
+
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        if(!form.checkValidity()){ form.reportValidity(); return; }
+
+        // Bots fill the hidden field or submit instantly; pretend success.
+        if(document.getElementById('website').value || (Date.now() - loadedAt) < 3000){
+            setStatus('Thanks \u2014 your message has been sent.', 'var(--sage)');
+            form.reset();
+            return;
+        }
+
+        var payload = {
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            topic: document.getElementById('topic').value,
+            message: document.getElementById('message').value.trim()
+        };
+
+        btn.disabled = true;
+        var oldLabel = btn.textContent;
+        btn.textContent = 'Sending\u2026';
+        setStatus('', '');
+
+        // text/plain keeps this a "simple" request so the browser skips the CORS preflight
+        fetch(CONTACT_URL, {
+            method: 'POST',
+            headers: {'Content-Type': 'text/plain;charset=utf-8'},
+            body: JSON.stringify(payload)
+        })
+        .then(function(res){
+            if(!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+        })
+        .then(function(json){
+            if(!json || !json.ok) throw new Error((json && json.error) || 'Unknown error');
+            setStatus('Thanks \u2014 your message has been sent. We\'ll get back to you soon.', 'var(--sage)');
+            form.reset();
+            loadedAt = Date.now();
+        })
+        .catch(function(err){
+            console.error('Contact form failed:', err);
+            setStatus('Sorry, your message could not be sent. Please email us directly at ' + FALLBACK_EMAIL + '.', 'var(--copper)');
+        })
+        .then(function(){
+            btn.disabled = false;
+            btn.textContent = oldLabel;
+        });
+    });
+})();
+</script>
 </body>
 </html>
