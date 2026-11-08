@@ -695,19 +695,24 @@
             <p class="lead-p" data-editable="source" data-path="/index.html" data-key="text-13">Recordings from community meetings, explainers on the proposal, and the presentations we've given to date.</p>
 
             <div class="grid-2" style="margin-top:36px;">
+
                 <div class="video-card">
                     <iframe
                             style="border-radius:12px"
-                            src="https://www.youtube.com/embed/5qWJxhha97M?"
+                            data-src="https://www.ctvnews.ca/calgary/article/an-environmental-reckoning-data-centre-rush-hits-hard-realities/"
                             width="100%"
                             height="550"
                             frameborder="0"
                             allowfullscreen
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
                     </iframe>
                     <div class="video-meta">
-                        <span class="mono">Podcast</span>
-                        <h3 style="font-size:1.05rem;" data-editable="source" data-path="/index.html" data-key="text-14">Rural Revolt Over AI Data Centre</h3>
+                        <span class="mono">News</span>
+                        <h3 style="font-size:1.05rem;">
+                            <a href="https://www.ctvnews.ca/calgary/article/an-environmental-reckoning-data-centre-rush-hits-hard-realities/" target="_blank" rel="noopener noreferrer">
+                                An environmental reckoning? Data centre rush hits hard realities
+                            </a>
+                        </h3>
                     </div>
                 </div>
 
@@ -716,7 +721,7 @@
                 <div class="video-card">
                     <iframe
                             style="border-radius:12px"
-                            src="https://www.ctvnews.ca/calgary/video/2026/08/06/vulcan-county-residents-pushing-back-against-data-centre/"
+                            data-src="https://www.ctvnews.ca/calgary/video/2026/08/06/vulcan-county-residents-pushing-back-against-data-centre/"
                             width="100%"
                             height="550"
                             frameborder="0"
@@ -732,6 +737,26 @@
                         </h3>
                     </div>
                 </div>
+
+                <div class="video-card">
+                    <iframe
+                            style="border-radius:12px"
+                            data-src="https://www.youtube.com/embed/5qWJxhha97M?rel=0"
+                            width="100%"
+                            height="550"
+                            frameborder="0"
+                            allowfullscreen
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                    </iframe>
+                    <div class="video-meta">
+                        <span class="mono">Podcast</span>
+                        <h3 style="font-size:1.05rem;" data-editable="source" data-path="/index.html" data-key="text-14">Rural Revolt Over AI Data Centre</h3>
+                    </div>
+                </div>
+
+
+
+
 
                 <div class="video-card">
                     <iframe
@@ -1428,11 +1453,21 @@
 </footer>
 
 <script>
+    // Load deferred iframes only once their page is visible, so they measure
+    // their real size (a hidden iframe is 0px wide and gets a blurry thumbnail).
+    function loadDeferredFrames(root){
+        root.querySelectorAll('iframe[data-src]').forEach(function(f){
+            f.src = f.getAttribute('data-src');
+            f.removeAttribute('data-src');
+        });
+    }
+
     function showPage(id, fromHistory){
         var target = document.getElementById('page-' + id);
         if(!target){ id = 'home'; target = document.getElementById('page-home'); }
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         target.classList.add('active');
+        loadDeferredFrames(target);
         document.querySelectorAll('nav.tabs button').forEach(b => {
             b.classList.toggle('active', b.dataset.page === id);
         });
