@@ -158,17 +158,47 @@
             content:""; position:absolute; left:14px; right:14px; bottom:6px; height:2px;
             background:var(--copper);
         }
-        .burger{display:none; background:none;border:none;color:var(--parchment);font-size:1.5rem;cursor:pointer; flex-shrink:0;}
+        /* Menu button: only shown when the tabs no longer fit */
+        .burger{
+            display:none; align-items:center; gap:10px; flex-shrink:0;
+            background:rgba(246,241,230,.06); color:var(--parchment);
+            border:1px solid rgba(246,241,230,.35); border-radius:6px;
+            justify-content:center; width:48px; height:48px; padding:0; cursor:pointer;
+            font-family:'Public Sans',sans-serif; font-weight:600; font-size:.95rem;
+            transition:background .15s, border-color .15s;
+        }
+        .burger:hover, .burger[aria-expanded="true"]{background:rgba(246,241,230,.14); border-color:var(--parchment);}
+        .burger:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+        .burger .bars{display:inline-block; width:18px; height:2px; background:currentColor; position:relative;}
+        .burger .bars::before, .burger .bars::after{content:""; position:absolute; left:0; width:100%; height:2px; background:currentColor;}
+        .burger .bars::before{top:-6px;}
+        .burger .bars::after{top:6px;}
 
         @media (max-width:1180px){
-            .nav-row{flex-wrap:wrap;}
-            .nav-tabs-row{display:none; flex-basis:100%; order:3;}
-            .nav-tabs-row.open{display:block; border-top:1px solid var(--line-dark); margin-top:12px; padding-top:6px;}
-            .nav-tabs-inner{overflow-x:visible;}
+            .burger{display:inline-flex;}
+            .nav-tabs-row{
+                display:none;
+                position:absolute; top:100%; left:0; right:0;
+                background:var(--dusk);
+                border-top:1px solid var(--line-dark);
+                border-bottom:1px solid var(--line-dark);
+                box-shadow:0 14px 28px rgba(0,0,0,.28);
+                max-height:calc(100vh - 100%);
+                overflow-y:auto;
+            }
+            .nav-tabs-row.open{display:block;}
+            .nav-tabs-inner{overflow-x:visible; max-width:var(--max); margin:0 auto; padding:0 20px;}
             nav.tabs{flex-direction:column; flex-wrap:nowrap; white-space:normal; width:auto; margin:0; padding:8px 0;}
-            nav.tabs button{text-align:left; width:100%; padding:14px 12px;}
-            .burger{display:block;}
-            .nav-actions .nav-btn{display:none;}
+            nav.tabs button{text-align:left; width:100%; padding:14px 12px; border-bottom:1px solid rgba(246,241,230,.08);}
+            nav.tabs button:last-child{border-bottom:0;}
+            nav.tabs button.active::after{left:12px; right:auto; width:28px; bottom:8px;}
+            .nav-row{padding:12px 20px;}
+        }
+        @media (max-width:560px){
+            .brand .name{font-size:1.1rem;}
+            .brand .name small{display:none;}
+            .brand .logo{width:44px; height:44px;}
+            .burger{width:44px; height:44px;}
         }
 
 
@@ -605,6 +635,9 @@
             </div>
         </div>
 
+        <button type="button" class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false" aria-controls="tabsNav">
+            <span class="bars" aria-hidden="true"></span>
+        </button>
 
     </div>
 </header>
@@ -1503,6 +1536,7 @@
             b.classList.toggle('active', b.dataset.page === id);
         });
         document.getElementById('tabsNav').classList.remove('open');
+        var bb = document.getElementById('burgerBtn'); if(bb) bb.setAttribute('aria-expanded','false');
         window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
         // Add a real browser history entry for each page so the Back button works.
         if(!fromHistory && window.location.hash !== '#' + id){
@@ -1521,9 +1555,27 @@
     });
 
     var burgerBtn = document.getElementById('burgerBtn');
-    if(burgerBtn){ burgerBtn.addEventListener('click', () => {
-        document.getElementById('tabsNav').classList.toggle('open');
-    }); }
+    var tabsNav = document.getElementById('tabsNav');
+    function setMenu(open){
+        tabsNav.classList.toggle('open', open);
+        if(burgerBtn) burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    if(burgerBtn){
+        burgerBtn.addEventListener('click', function(e){
+            e.stopPropagation();
+            setMenu(!tabsNav.classList.contains('open'));
+        });
+    }
+    // close the dropdown on outside click, Escape, or when the window grows wide again
+    document.addEventListener('click', function(e){
+        if(!tabsNav.contains(e.target)) setMenu(false);
+    });
+    document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') setMenu(false);
+    });
+    window.addEventListener('resize', function(){
+        if(window.innerWidth > 1180) setMenu(false);
+    });
 
     function copyShareLink(){
         navigator.clipboard && navigator.clipboard.writeText(window.location.href.split('#')[0]);
